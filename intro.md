@@ -42,7 +42,11 @@ principles
         - use ssh keys in /mnt/etc/ssh/...
         - now a root can access using authorization info as specified in /mnt/etc/ssh/...
     - start g8os_fs
-        - @todo fork to g8os & rename   
+        - mount sandbox for
+            - os tools
+            - jumpscale
+            - G8OS binaries
+            - ovs
 
 ## config files
 
