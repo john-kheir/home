@@ -9,4 +9,4 @@ repo's
 - hubble (our socket forwarder)
 
 see issues
-[ [https://github.com/g8os/home/issues](https://github.com/g8os/home/issues)
+- [https://github.com/g8os/home/issues](https://github.com/g8os/home/issues)
