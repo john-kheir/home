@@ -2,7 +2,7 @@
 
 g8os is a grid based Operating System.
 
-principles
+process
 - bootstrap os booted from USB or VM (template in cloud)
     - bootstrap OS v 0.9:
         - kernel
@@ -47,6 +47,12 @@ principles
             - jumpscale
             - G8OS binaries
             - ovs
+- ays robot will now manage grid
+    - ays repo created/checkedout on controller
+    - in here nodes are added
+    - apps are linked to nodes
+    - ays manages install & process management & monitoring
+        - in fact full app lifecycle management is done by ays 
 
 ## config files
 
