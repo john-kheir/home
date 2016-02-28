@@ -1,1 +1,2 @@
-# home
+
+see [intro.md]
