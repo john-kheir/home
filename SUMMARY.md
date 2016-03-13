@@ -1,5 +1,7 @@
 # Summary
 
 * [Intro](intro.md)
-   * config files
+* [configuration files](docs/config/home.md)
+   * [generic](docs/config/generic.md)
+   * [network](docs/config/network.md)
 
