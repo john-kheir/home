@@ -56,5 +56,5 @@ process
 
 ## Config files
 
-#### [Main config file](config/generic.md)
-#### [Network config file](config/network.md)
+#### [Main config file](docs/config/generic.md)
+#### [Network config file](docs/config/network.md)
