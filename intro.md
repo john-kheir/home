@@ -54,18 +54,7 @@ process
     - ays manages install & process management & monitoring
         - in fact full app lifecycle management is done by ays 
 
-## config files
+## Config files
 
-### network
-
-- /etc/g8os/net.toml
-- @todo specify format
-- needs to support vxlan, vlan, dhcp...
-- specifies agentcontrollers to use
-    - multiple
-    - http(s) url / port
- 
-
-### ssh
-
-- @todo
+#### [Main config file](generic.md)
+#### [Network config file](network.md)
