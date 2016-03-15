@@ -23,6 +23,8 @@ if `auto` is set to false, the `core` will just ignore any interface that is not
 
 ## Network protocols
 Currently only the following configurations protocols are supported
+### none
+The `none` method only brings the interface up it doesn't set an IP on that interface. it also exclude it from the networking fallback plan. Useful if the interface is added to an `openvswitch`.
 ### dhcp
 The `dhcp` method doesn't require any further configurations, specifying `protocl = "dhcp"` is enough.
 ### static
@@ -37,4 +39,64 @@ ip = "10.20.30.40/24"
 gateway = "10.20.30.1"
 ```
 
+## TAP devices.
+You can automatically add `tap` devices in the config file as per the following example
+```toml
+[tap.port1]
+up = true
+```
+This will automatically add the tap device `port1` and bring it up. Useful in case of using `openvswitch``
 
+### OVS example
+Openvswitch services are started before processing the `network.toml` file. So by the time of processing the `network.tom` file all bridges should be in place.
+After that, all tap devices in the `network.toml` file are going to be created.
+
+```bash
+ovs-vsctrl add-br br0
+ovs-vsctrl add-port br0 eth0
+ovs-vsctrl add-port br0 port1
+```
+
+```toml
+[interface.lo]
+protocol = "static"
+
+[static.lo]
+ip = "127.0.0.1/8"
+
+[interface.br0]
+protocol = "dhcp"
+
+[interface.eth0]
+protocol = "none"
+
+[tap.port1]
+up = true
+```
+
+The final result of this setup should be something like the following
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master ovs-system state UP group default qlen 1000
+    link/ether 08:00:27:b8:5a:7b brd ff:ff:ff:ff:ff:ff
+3: ovs-system: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default
+    link/ether ea:ac:67:3f:18:42 brd ff:ff:ff:ff:ff:ff
+4: br0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default
+    link/ether 08:00:27:b8:5a:7b brd ff:ff:ff:ff:ff:ff
+    inet 10.254.254.79/24 scope global br0
+       valid_lft forever preferred_lft forever
+5: port1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue master ovs-system state DOWN group default qlen 500
+    link/ether c2:36:82:75:04:51 brd ff:ff:ff:ff:ff:ff
+```
+
+```
+Bridge "br0"
+    Port "port1"
+        Interface "port1"
+    Port "br0"
+        Interface "br0"
+            type: internal
+    Port "eth0"
+        Interface "eth0"
+```
