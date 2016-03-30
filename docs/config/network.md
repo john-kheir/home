@@ -39,14 +39,6 @@ ip = "10.20.30.40/24"
 gateway = "10.20.30.1"
 ```
 
-## TAP devices.
-You can automatically add `tap` devices in the config file as per the following example
-```toml
-[tap.port1]
-up = true
-```
-This will automatically add the tap device `port1` and bring it up. Useful in case of using `openvswitch``
-
 ### OVS example
 Openvswitch services are started before processing the `network.toml` file. So by the time of processing the `network.tom` file all bridges should be in place.
 After that, all tap devices in the `network.toml` file are going to be created.
@@ -69,9 +61,6 @@ protocol = "dhcp"
 
 [interface.eth0]
 protocol = "none"
-
-[tap.port1]
-up = true
 ```
 
 The final result of this setup should be something like the following
