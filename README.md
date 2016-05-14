@@ -16,5 +16,6 @@ supporting
 
 see issues
 - [https://github.com/g8os/home/issues](https://github.com/g8os/home/issues)
+- see issues in each repository listed above
 
 
