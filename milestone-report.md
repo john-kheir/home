@@ -3,8 +3,8 @@
 # Summary
 |Milestone|ETA|
 |---------|---|
-|[8.0](#milestone-80)|0 seconds|
-|[No milestone](#no-milestone)|0 seconds|
+|[8.0](#milestone-80)|N/A|
+|[No milestone](#no-milestone)|N/A|
 
 ## [Milestone 8.0](milestones/1:8.0.md)
 
