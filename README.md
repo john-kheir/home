@@ -18,3 +18,6 @@ milestones:
 see issues
 - [https://github.com/g8os/home/issues](https://github.com/g8os/home/issues)
 - see issues in each repository listed above
+
+Telegram group to meet the community: 
+- https://telegram.me/joinchat/BrOCOUGHeT035il_qrwQ2A
