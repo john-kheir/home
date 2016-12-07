@@ -11,8 +11,15 @@ repo's
 - [builders of G8OS initramfs](https://github.com/g8os/initramfs) (build instructions & scripts)
 - [AYS actor templates](https://github.com/g8os/ays_g8os)  (AYS actor templates repository which will contains services related to G8OS.)
 
+Releases:
+ - [v0.9.0](https://github.com/g8os/core0/releases/tag/v0.9.0) : First usable beta version of the G8OS.
+
 milestones:
-- [0.9](https://github.com/g8os/home/milestone/1) : First usable beta version of the G8OS.
+- [0.10.0](https://github.com/g8os/home/milestone/4) :
+  - monitoring / statistics
+  - self update
+  - container persistance ( maybe using AYS )
+  - investigate how to integrate ipfs lib inside core
 - [1.0](https://github.com/g8os/home/milestone/2) : First stable version and freezing of the APIs. Backward compatibility contracts start from this version.
 
 see issues
