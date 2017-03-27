@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [G8OS Boot Process Flow](process/process.md)
 * [Getting Started](gettingstarted/gettingstarted.md)
-  * [AYS](ays.md)
+  * [AYS](gettingstarted/ays.md)
   * [PXE Boot](gettingstarted/pxe.md)
   * [USB Stick](gettingstarted/usb.md)
 * [Configuration](config/config.md)
