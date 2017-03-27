@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [How to Get Started](gettingstarted/gettingstarted.md)
+* [Getting Started](gettingstarted/gettingstarted.md)
   * [Via PXE Boot](gettingstarted/pxe.md)
   * [Via USB Stick](gettingstarted/usb.md)
 * [Configuration](config/config.md)
