@@ -1,4 +1,4 @@
-# G8OS Configuration
+# Configuration
 
-* [Generic](generic.md)
-* [Network](network.md)
+* [Main configuration](generic.md)
+* [Network configuration](network.md)
