@@ -1,6 +1,7 @@
 # Summary
 
-* [Introduction](introduction/introduction.md)
+* [Introduction](README.md)
+* [G8OS Boot Process Flow](process/process.md)
 * [Getting Started](gettingstarted/gettingstarted.md)
   * [Via PXE Boot](gettingstarted/pxe.md)
   * [Via USB Stick](gettingstarted/usb.md)
