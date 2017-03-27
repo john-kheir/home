@@ -1,4 +1,7 @@
 # Getting Started
 
-* [Via PXE Boot](pxe.md)
-* [Via USB Stick](usb.md)
+There are several installation options for G8OS:
+
+* [AYS](ays.md)
+* [PXE Boot](pxe.md)
+* [USB Stick](usb.md)
