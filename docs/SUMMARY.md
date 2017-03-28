@@ -16,6 +16,7 @@
   * [JumpScale Client](interacting/jumpscale.md)
 * [Flists](flists/flists.md)
   * [Creating Flists](flists/creating.md)
+  * [Flist Examples](examples.md)
   * [Merging Flists](flists/merging.md)
   * [G8OS Hub](flists/hub.md)
 * [Containers](containers/containers.md)
