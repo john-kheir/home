@@ -4,7 +4,7 @@
 * [G8OS Boot Process Flow](process/process.md)
 * [Getting Started](gettingstarted/gettingstarted.md)
   * [Installing G8OS on a Packet.net Server using AYS](gettingstarted/ays.md)
-  * [Installing G8OS on a Docker Container](gettingstarted/docker.md)
+  * [Installing Core0 on a Docker Container](gettingstarted/docker.md)
   * [Installing G8OS on VirtualBox](gettingstarted/virtualbox.md)
   * [Installing G8OS from PXE Boot](gettingstarted/pxe.md)
   * [Installing G8OS from USB](gettingstarted/usb.md)

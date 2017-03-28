@@ -1,6 +1,8 @@
-## Installing G8OS on a Docker Container
+## Installing Core0 on a Docker Container
 
-The below steps will guide you through the process to setup core0 on a Docker container. Core0 is the `systemd` replacement for G8OS.
+Core0 is the `systemd` replacement for G8OS.
+
+The below steps will guide you through the process to setup Core0 on a Docker container.
 
 Steps:
 
@@ -8,10 +10,11 @@ Steps:
 - [Starting a container with core0](#start-container)
 - [Access G8OS from JumpScale](#jumpscale-client)
 
+
 <a id="base-image"></a>
 ## Prepare a base Docker image to host Core0
 
-Copy the following content to a Dockerfile some where on your system:
+Copy the following content to a new Dockerfile somewhere on your system:
 
 ```dockerfile
 FROM ubuntu:16.04
@@ -25,7 +28,7 @@ RUN apt-get update && \
     apt-get install -y redis-server
 ```
 
-Build the image:
+Build the image from your Dockerfile:
 
 ```bash
 mkdir ~/build
