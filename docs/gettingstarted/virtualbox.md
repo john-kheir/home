@@ -1,4 +1,4 @@
-# Installing G8OS using AYS
+# Installing Core0 on VirtualBox
 
 Steps:
 
