@@ -16,13 +16,13 @@ Some important remarks:
 - Compile Caddy with the OAuth plugin for ItsYou.online, available from https://github.com/itsyouonline/caddy-integration
 - Install JumpScale from the correct branch: `8.2.0`, this version contains all dependencies needed by flist, used on the Hub, including the G8 storage client (`g8storclient`)
 - Deploy an ARDB instance for the storage
-  - Make it read-write (default configuration)
+  - Make it read-write (default)
   - No specific backend is required, RocksDB is a good choice
   - Expose this ARDB instance  as `PRIVATE_ARDB_` in the config
   - Don't expose it publicly
 - Deploy a Redis instance
   - In slave-of mode
-  - Read-only by default
+  - Make it read-only (default)
   - Expose this Redis instance as `PUBLIC_ARDB_` in the config
   - Exposed it publicly
 
