@@ -4,7 +4,7 @@ On a EFI enabled machine, it's really easy to boot the G8OS kernel. No bootloade
 
 ## On Linux
 
-We assume that your USB Device is `/dev/sdc`, you can make boot the kernel as following:
+We assume that your USB device is `/dev/sdc`, you can make boot the kernel as following:
 
 - Create a FAT32 partition (this will erase the whole device): `mkfs.vfat /dev/sdc`
 - Mount the partition: `mount /dev/sdc /mnt/g8os-usb`
