@@ -11,12 +11,13 @@ In what follows we discuss the steps to install G8OS using local AYS installatio
 - [Get the IP address of your Packet.net server](#get-ip)
 - [Install the G8OS on your Packet.net server](#install-g8os)
 
+
 <a id="install-ays"></a>
 ## Install the AYS templates
 
 The AYS templates for installing a G8OS require AYS v8.2.
 
-See the installation instructions here: <link here>
+See the installation instructions here: [Installation of JumpScale](https://gig.gitbooks.io/jumpscale-core8/content/Installation/Installation.html)
 
 
 <a id="install-templates"></a>
@@ -97,6 +98,7 @@ Recurring actions: None
 Event filters: None
 ```
 
+
 <a id="install-g8os"></a>
 ## Install the G8OS on your Packet.net server
 
@@ -116,7 +118,9 @@ ays blueprint 2_g8os.yaml
 ays run create --follow
 ```
 
-Your container should be now running, you can inspect it to see its ZeroTier IP:
+Your container should now be running.
+
+You can inspect it to see its ZeroTier IP:
 
 ```
 ays service show -r container

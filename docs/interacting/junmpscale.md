@@ -1,13 +1,8 @@
 # JumpScale Client
 
-This below script expects you know the IP address of the core0 and you can access it from the machine running this script.
+The below script expects you know the IP address of the core0 and that you can access it from the machine running the script. A custom [ZeroTier](https://www.zerotier.com/) network is used for that.
 
-An easy way to do it is to build the initramfs with a custom ZeroTier network ID.
-
-
- (https://github.com/g8os/initramfs/tree/0.10.0#customize-build)
-At boot core0 will connect to the zerotier network and you can assing an IP to it.
-
+See the [Getting Started](../gettingstarted/gettingstarted.md) section for the G8OS installation options.
 
 ```
 import sys
@@ -16,7 +11,7 @@ from JumpScale import j
 
 SSHKEY = j.clients.ssh.SSHKeyGetFromAgentPub("ovh_install")
 CORE0IP = "{core0-ip-address}"
-ZEROTIER = "565799d8f62c272e"
+ZEROTIER = "{zerotier-network-id}"
 
 
 def main():
@@ -76,7 +71,7 @@ def get_zerotier_ip(container):
         time.sleep(2)
         i += 1
 
-    raise TimeoutError("[-] couldn't get an ip on zerotier network")
+    raise TimeoutError("[-] couldn't get an ip on ZeroTier network")
 
 if __name__ == '__main__':
     main()
