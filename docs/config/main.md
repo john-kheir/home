@@ -1,8 +1,10 @@
 # Main Configuration
 
-The main `core` configuration is auto-loaded from the `/etc/g8os/g8os.toml` file.
+The main configuration is auto-loaded from the `/etc/g8os/g8os.toml` file.
 
-This configuration file has the following sections:
+In the [g8os/initramfs](https://github.com/g8os/initramfs) repository that you'll use for creating the G8OS boot image, `g8os.toml` can be found in the `config/g8os` directory.
+
+`g8os.toml` has the following sections:
 
 - [main](#main)
 - [sink](#sink)
