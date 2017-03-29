@@ -2,8 +2,9 @@
 
 The hub is active on `http://hub.gig.tech`
 
+An example Ubuntu 16.04 flist is also available from https://stor.jumpscale.org/public/flists/flist-ubuntu1604.db.tar.gz
 
-## Installation
+## Setting up your own Hub instance
 
 All the code for the Hub can be found on https://github.com/g8os/hub
 

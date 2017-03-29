@@ -20,7 +20,6 @@
   * [Go Client](interacting/go.md)
 * [Flists](flists/flists.md)
   * [Creating Flists](flists/creating.md)
-  * [Flist Examples](flists/examples.md)
   * [Merging Flists](flists/merging.md)
   * [G8OS Hub](flists/hub.md)
 * [Containers](containers/containers.md)

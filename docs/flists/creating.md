@@ -5,7 +5,8 @@ To create a flist you need [JumpScale](https://github.com/Jumpscale/jumpscale_co
 Using the JumpScale client it actually takes 2 steps:
 
 - [Creation of the flist DB](#create-db)
-- [Package you flist DB](#packqage-db)
+- [Package your flist DB](#packqage-db)
+- [Share your flist DB](3share)
 
 <a id="create-db"></a>
 ##Creation of the flist DB
@@ -31,3 +32,9 @@ cd .. && gzip flist-example.db.tar
 ```
 
 The result is `flist-example.db.tar.gz` and this is the file you need to pass to the JumpScale client during a container creation.
+
+
+<a id="share"></a>
+## Share your flist DB
+
+See [Hub](hub.md)
