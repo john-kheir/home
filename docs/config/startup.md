@@ -1,12 +1,10 @@
 # Startup Services
 
-A startup service is an automatic calling of any of the available commands, even the ones that are defined via extensions.
+A startup service is any of the available commands and extensions, that get started automatically.
 
-When Core0 boots, it will start all services defined in the TOML files specified in the `[include]` section of the main configuration.
+When Core0 boots, it will start all startup services defined in the TOML files specified in the `[include]` section of the main configuration.
 
-A service can define a list of dependencies where the service will only run `after` all the its dependencies have ran successfully. A service is considered running according to certain configurable criteria.  
-
-Structure of startup service:
+Startup services are defined as follows in a `[startup.{service-id}]` section:
 
 ```toml
 [startup.{service-id}]
@@ -22,14 +20,16 @@ key1 = "value"
 key2 = 100
 ```
 
+- **{service-id}**: Unique identification tag for referencing the startup service in other configuration files
+
 - **name**: Name the Core0 command to execute, e.g. `core.system`, can also be an extension
 
 - **after**: Lists the services identified by their {service-id} that must be considered running before Core0 attempts to start this service, these services can be any of the services defined in the other TOML files, or one of the Core0 built-in services `init, net, and boot`:
   - **init**: Service must be started as fast as possible, even before Core0 attempts to setup the networking, services like that are needed for the hardware operation (e.g. loading modules or starting udev), when the init run is complete Core0 will attempt to setup networking
-  - **net**: Service must run as fast as possible once networking is up, this can include joining ZeroTier network, or registering itself with an AYS service, once those services are up, Core0 will move on starting the other services which has `after` = ['boot']
+  - **net**: Service must run as fast as possible once networking is up, this can include joining a ZeroTier network, or registering itself with an AYS service, once those services are up, Core0 will move on starting the other services which have `after` = ['boot']
   - **boot**: The default dependency of any service that doesn't define an `after`
 
-- **running_delay**: By default a service is considered running if it started and did not exit within 2 seconds, this value can be adjusted here, you can set the value to less than zero (-1 for example) which means you can assume that the service has ran unless it exits successfully, this is usually used by startup scripts that needs to prepare something (crate directories, or clean up files), before other services starts, so it needs to exit before u can start subsequent services
+- **running_delay**: By default a service is considered running if it started and did not exit within 2 seconds, this value can be adjusted here, you can set the parameter to a negative value (e.g. -1) which means you can assume that the service has ran unless it exits successfully, this is usually used by startup scripts that needs to prepare something (crate directories, or clean up files), before other services starts, so it needs to exit before u can start subsequent services
 
 - **running_match**: This has higher presence than the `running_delay`, so if both are defined `running_delay` will be ignored, `running_match` is a regular expression that will flags the service as `running` if the service outputs a line that matches this expression, so simply u assume the service is running if it prints something like `service is up` for instance
 

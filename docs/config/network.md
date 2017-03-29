@@ -1,6 +1,6 @@
 # Network Configuration
 
-The core applies the network configuration as defined in the `/etc/g8os/network.toml`, structured as follows:
+Core0 applies the network configuration as defined in the `/etc/g8os/network.toml`, structured as follows:
 
 ```toml
 [network]
