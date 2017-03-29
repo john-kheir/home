@@ -1,6 +1,6 @@
-# Installing G8OS on a Packet.net Server using AYS
+# Booting G8OS on Packet.net
 
-The AYS templates for installing a G8OS are available at https://github.com/g8os/ays_template_g8os.
+The AYS templates for installing a G8OS on a Packet.net server are available at https://github.com/g8os/ays_template_g8os.
 
 In what follows we discuss the steps to install G8OS using local AYS installation:
 

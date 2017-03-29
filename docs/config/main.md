@@ -50,7 +50,7 @@ password = ""
 
 
 <a id="logging"></a>
-# logging
+## logging
 
 In this section you define how core0 processes logs from running jobs.
 

@@ -1,23 +1,23 @@
-# Installing G8OS on a VM in VirtualBox
+# Booting G8OS on VirtualBox
 
 Steps:
 
-- [Build an initramsfs](#build-initramsfs)
-- [Create a bootable disk image](#create-bootable)
+- [Build a G8OS boot image](#build-image)
+- [Create a bootable disk](#create-bootable)
 - [Create a new virtual machine on VirtualBox](#create-vm)
 - [Create a port forward from the VM to your host to expose the Redis of the core0](#create-portforward)
 - [Start the virtual machine](#start-vm)
 - [Ping the core0](#ping-core0)
 
 
-<a id="build-initramsfs"></a>
-## Build an initramsfs
+<a id="build-image"></a>
+## Build a G8OS boot image
 
 See the [initramfs README.md](https://github.com/g8os/initramfs/blob/master/README.md) to know how to proceed.
 
 
 <a id="create-bootable"></a>
-## Create a bootable disk image with the initramfs created in previous step
+## Create a bootable disk with the G8OS boot image created in previous step
 
 ```shell
 dd if=/dev/zero of=g8os.img bs=1M count=64
