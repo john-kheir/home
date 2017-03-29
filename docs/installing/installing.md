@@ -1,4 +1,4 @@
-# Booting a G8OS Boot Image
+# Installing G8OS
 
 * [Booting from USB](usb.md)
 * [Booting from PXE Boot Server](pxe.md)

@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Getting Started](gettingstarted/gettingstarted.md)
 * [Building your G8OS Boot Image](building/building.md)
-* [Installing G8OS](installing/instaling.md)
+* [Installing G8OS](installing/installing.md)
   * [Booting from USB](installing/usb.md)
   * [Booting from PXE Boot Server](installing/pxe.md)
   * [Installing G8OS on a VM in VirtualBox](installing/virtualbox.md)
