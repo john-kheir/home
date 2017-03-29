@@ -1,11 +1,7 @@
-#Networking
-The core applies the network configuration as follows
-- It applies the configuration as configured in the `/etc/g8os/network.toml` file
-- It tries to reach at least one of the configured `controllers`
-- If it can't reach any, it tries `dhcp` on all interfaces one at a time and try to reach any of the controllers again
-- If it still can't reach, it will fall back to random static IP (in range `10.254.254.0/24`) and tries to reach a controller on `10.254.254.254`
+# Network Configuration
 
-The network configuration file is structured as follows
+The core applies the network configuration as defined in the `/etc/g8os/network.toml`, structured as follows:
+
 ```toml
 [network]
 auto = true
@@ -18,18 +14,32 @@ protocol = "<protocol>"
 #for that interface
 ```
 
-The `[network]` section currently only have the `auto` flag, which tells core to auto configure all found interfaces using the dhcp method if there is no specific `interface` section for that interface.
-if `auto` is set to false, the `core` will just ignore any interface that is not specificly configured in the network.toml file.
+The configuration is applied as follows:
 
-## Network protocols
-Currently only the following configurations protocols are supported
-### none
-The `none` method only brings the interface up it doesn't set an IP on that interface. it also exclude it from the networking fallback plan. Useful if the interface is added to an `openvswitch`.
-### dhcp
-The `dhcp` method doesn't require any further configurations, specifying `protocl = "dhcp"` is enough.
-### static
-The `static` method requires a `[static.<if>]` section
-Example:
+- It tries to reach at least one of the configured `controllers`
+- If it can't reach any, it tries `dhcp` on all interfaces, one at a time and tries to reach any of the controllers again
+- If it still can't reach a controller, it will fall back to a random static IP address in the `10.254.254.0/24` range and tries to reach a controller on `10.254.254.254`
+
+The `[network]` section currently only has the `auto` flag, which tells core to auto configure all found interfaces using the DHCP method if there is no specific `interface` section for that interface. If `auto` is set to false, the core will just ignore any interface that is not specifically configured in the `network.toml` file.
+
+
+## Supported network protocols
+
+Currently only the following network protocols are supported:
+
+- **none**: Only brings the interface up, it doesn't set an IP address on that interface, it also excludes it from the networking fallback plan. This is useful if the interface is added to an Open vSwitch switch
+- **dhcp**: Doesn't require any further configurations, specifying `protocl = "dhcp"` is enough
+- **static**: Requires a `[static.<if>]` section, see the below example
+
+Below two examples:
+
+- [Static](#static)
+- [Open vSwitch](#ovs)
+
+
+<a id="static"></a>
+### Static Example
+
 ```toml
 [interface.eth0]
 protocol = "static"
@@ -39,9 +49,11 @@ ip = "10.20.30.40/24"
 gateway = "10.20.30.1"
 ```
 
-### OVS example
-Openvswitch services are started before processing the `network.toml` file. So by the time of processing the `network.tom` file all bridges should be in place.
-After that, all tap devices in the `network.toml` file are going to be created.
+
+<a id="ovs"></a>
+### Open vSwitch example
+
+Open vSwitch services are started before processing the `network.toml` file. So by the time of processing the `network.tom` file all bridges should be in place. After that, all tap devices in the `network.toml` file are going to be created.
 
 ```bash
 ovs-vsctrl add-br br0
@@ -63,7 +75,8 @@ protocol = "dhcp"
 protocol = "none"
 ```
 
-The final result of this setup should be something like the following
+The final result of this setup should be something like the following:
+
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00

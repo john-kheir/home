@@ -1,13 +1,17 @@
-# Configurations for core
+# Main Configuration
 
-The main `core` configuration is auto-loaded from the `/etc/g8os/g8os.toml` file. The main config file has the following sections
+The main `core` configuration is auto-loaded from the `/etc/g8os/g8os.toml` file.
 
-- main
-- controllers
-- extension
-- logging
+This configuration file has the following sections:
 
-## main section
+- [main](#main)
+- [controllers](#controllers)
+- [extension](#extension)
+- [logging](#loging)
+
+<a id="main"></a>
+## main
+
 ```toml
 [main]
 max_jobs = 200
@@ -16,12 +20,17 @@ include = "/etc/g8os/g8os.d"
 network = "/etc/g8os/network.toml"
 ```
 
-- **max_jobs** Max parallel jobs the core can execute at the same time as his own directly children.
-- **message_id_file**: tracks log message id (will probably get deprecated in the future)
-- **include**: Include all toml files from the specified directory. This directory can have configurations for startup services and extensions
-- **network**: Networking configurations file
+- **max_jobs**: Max parallel jobs the core can execute at the same time as its own direct children
+- **message_ID_file**: Tracks log message id (will probably get deprecated in the future)
+- **include**: Path to the directory with TOML files to include, this directory can have configurations for startup services and extensions
+- **network**: Path to the network configuration file, discussed in [Network Configuration](network.md)
 
-## controllers section
+
+<a id="controller"></a>
+## controllers
+
+In this section you define one or more controllers to connect to:
+
 ```toml
 [controllers]
     [controllers.main]
@@ -35,26 +44,38 @@ network = "/etc/g8os/network.toml"
         certificate_authority = "/path/to/server.crt"
 ```
 
-Define one of more controller to connect to.
 
+<a id="extension"></a>
 ## extension
-example
+
+Extensions are wrappers around the basic `execute` command. It makes calling certain binaries easier.
+
+For example the following extension will allow the client to execute a `bash` script without having to construct a complex `execute` command:
+
 ```toml
 [extension.bash]
 binary = "bash"
 args = ['-c', 'T=`mktemp` && cat > $T && bash $T; EXIT=$?; rm -rf $T; exit $EXIT']
 ```
 
-Extension are wrapper around the basic `execute` command. It makes calling certain binaries easier for example the above extesnion
-will allow the client to send bash script to the core without the need to construct a complex `execute` command.
+It basically translates to a bash command with the provided arguments, which dumps the `stdin` into a file and then executes that file and returns the exit code.
 
-It basically be translated to a bash command with the provided arguments, which dumps the `stdin` into a file and then execute
-that file and return exit code.
+Core already ships with lots of extensions including extensions to manage file syncing, and executing JumpScripts.
 
-Core already ships with lots of extensions including extensions to manage file syncing, and executing jumpscripts.
 
+<a id="logging"></a>
 # logging
-example
+
+In this section you define the logger and the log levels to store per logger.
+
+Available loggers types are:
+
+- **db**: stores logs into bolt db files
+- **ac**: patches and sends logs to controller
+- **console**: prints logs on the console
+
+Example:
+
 ```
 [logging]
     [logging.db]
@@ -73,8 +94,3 @@ example
     type = "console"
     levels = [2, 4, 7, 8, 9]
 ```
-
-Define logger and log levels to store per logger. Available loggers types are:
-- db, stores logs into bolt db files
-- ac, patch and send logs to controller
-- console, print logs on the console.

@@ -1,4 +1,4 @@
 # Configuration
 
-* [Main configuration](generic.md)
-* [Network configuration](network.md)
+* [Main Configuration](generic.md)
+* [Network Configuration](network.md)
