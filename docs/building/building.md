@@ -36,6 +36,12 @@ Some parts need to chown/setuid/chmod files as root.
 <a id="docker"></a>
 ## Building using a Docker container
 
+First clone the [g8os/initramfs](https://github.com/g8os/initramfs) repository:
+
+```
+git clone git@github.com:g8os/initramfs.git
+```
+
 From the root of this repository, create a Docker container:
 
 ```shell
@@ -50,7 +56,7 @@ apt-get install -y asciidoc xmlto --no-install-recommends
 apt-get install -y xz-utils pkg-config lbzip2 make curl libtool gettext m4 autoconf uuid-dev libncurses5-dev libreadline-dev bc e2fslibs-dev uuid-dev libattr1-dev zlib1g-dev libacl1-dev e2fslibs-dev libblkid-dev liblzo2-dev git libbison-dev flex libmnl-dev xtables-addons-source libglib2.0-dev libfuse-dev libxml2-dev libdevmapper-dev libpciaccess-dev libnl-3-dev libnl-route-3-dev libyajl-dev dnsmasq
 ```
 
-Then install go:
+Then install Go:
 
 ```
 curl https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz > go1.7.3.linux-amd64.tar.gz
@@ -63,24 +69,24 @@ export GOPATH=/gopath
 <a id="whatitdoes"></a>
 ## What initramfs.sh does?
 
- - First, download and check checksum of all archives needed
- - Extract the archives
+ - First, it downloads and checks the checksum of all needed archives
+ - Extracts the archives
  - Compiles:
     - Busybox
     - Fuse (library and userland tools)
-    - OpenSSL and SSL Certificates (ca-certificates)
+    - OpenSSL and SSL Certificates (CA-certificates)
     - util-linux (for `lsblk`, ...)
     - Redis (only the server is used)
     - BTRFS (btrfs-progs)
     - libvirt and QEMU
     - ZeroTier One
     - parted (partition management)
-    - dnsmasq (used for dhcp on containers)
+    - dnsmasq (used for DHCP on containers)
     - nftables (used for firewalling and routing)
     - iproute2 (used for network namespace support)
-    - socat (used for some tcp/port forwarding)
- - Clean and remove useless files
- - Compile the kernel (and bundles initramfs in the kernel)
+    - socat (used for some TCP port forwarding)
+ - Cleans and removes useless files
+ - Compiles the kernel and bundles `initramfs` into the kernel
 
 
 <a id="howtouse"></a>
@@ -108,14 +114,13 @@ The `initramfs.sh` script accepts multiple options:
 
 The option `--kernel` is useful if you change something on the root directory and you want to rebuild the kernel (with the initramfs).
 
-If you are modifying core0/coreX, you can simply use the `--cores --kernel` options and first the cores will be rebuilt and then initramfs.
-This will produce a new image with the latest changes.
+If you are modifying core0/coreX, you can simply use the `--cores --kernel` options and first the cores will be rebuilt and then `initramfs`. This will produce a new G8OS boot image (kernel) with the latest changes.
 
 
 <a id="custom"></a>
 ## Customize build
 
-You can customize your build for some service, for example, you can configure a private ZeroTier network to join during boot instead (by default) of joining the ZeroTier Earth network.
+You can customize your build for some service, for example, you might want to join a private ZeroTier network during boot instead of joining (by default) the ZeroTier Earth network.
 
 In order to customize you need to add your own services to the `conf/root/` directory.
 
