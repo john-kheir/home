@@ -1,4 +1,4 @@
-# Installing Core0 on VirtualBox
+# Installing G8OS on a VM in VirtualBox
 
 Steps:
 

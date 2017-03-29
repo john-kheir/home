@@ -2,7 +2,7 @@
 
 Core0 is the `systemd` replacement for G8OS.
 
-The below steps will guide you through the process to setup Core0 on a Docker container.
+The below steps will guide you through the process to setup Core0 on a Docker container running Ubuntu.
 
 Steps:
 

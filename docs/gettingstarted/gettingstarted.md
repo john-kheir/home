@@ -1,8 +1,7 @@
 # Getting Started
 
-There are several installation options for G8OS:
+To get acquainted with G8OS you will want to go through the following process:
 
-* [USB Stick](usb.md)
-* [PXE Boot](pxe.md)
-* [Installing G8OS on VirtualBox](virtualbox.md)
-* [Installing G8OS on a Packet.net Server using AYS](ays.md)
+- [Building your G8OS Boot Image](../building/building.md)
+- [Installing G8OS](../installing/installing.md)
+- [Interacting with G8OS](../interacting/interacting.md)
