@@ -10,13 +10,13 @@ Steps:
 - [Ping the core0](#ping-core0)
 
 
-<id="build-initramsfs"></a>
+<a id="build-initramsfs"></a>
 ## Build an initramsfs
 
 See the [initramfs README.md](https://github.com/g8os/initramfs/blob/master/README.md) to know how to proceed.
 
 
-<id="create-bootable"></a>
+<a id="create-bootable"></a>
 ## Create a bootable disk image with the initramfs created in previous step
 
 ```shell
@@ -28,7 +28,7 @@ cp staging/vmlinuz.efi /mnt/EFI/BOOT/BOOTX64.EFI
 umount /mnt
 ```
 
-<id="create-vm"></a>
+<a id="create-vm"></a>
 ## Create a new virtual machine on VirtualBox  
 
 Select a Linux 64bit:  
@@ -40,17 +40,17 @@ Before starting the virtual machine make sure you enabled the EFI support in the
 ![create vm](images/enable_efi.png)  
 
 
-<id="create-portforward"></a>
+<a id="create-portforward"></a>
 ## Create a port forward from the VM to your host to expose the Redis of the core0
 
 ![port forward](images/portforward.png)
 
-<id="start-vm"></a>
+<a id="start-vm"></a>
 ## Start the VM
 
 Use the disk created a step 2 as boot disk
 
-<id="ping-core0></a>
+<a id="ping-core0></a>
 ## Ping the core0
 
 Using the Python client:
