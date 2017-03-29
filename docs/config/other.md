@@ -1,5 +1,7 @@
 # Other Configurations Files
 
+See: `config/root`.
+
 ## disk.toml
 
 Add extensions to manage disks using `parted` to create, delete partitions. Also mount and umount of partitions.

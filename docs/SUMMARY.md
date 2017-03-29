@@ -9,7 +9,7 @@
   * [VirtualBox](installing/virtualbox.md)
   * [Packet.net Server](installing/ays.md)
 * [Configuration](config/config.md)
-  * [Main Configuration](config/generic.md)
+  * [Main Configuration](config/main.md)
   * [Network Configuration](config/network.md)
   * [Other Configurations](config/other.md)
   * [Startup Services](config/startup.md)

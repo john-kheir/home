@@ -124,7 +124,9 @@ You can customize your build for some service, for example, you might want to jo
 
 In order to customize you need to add your own services to the `conf/root/` directory.
 
-For instance for joining a private ZeroTier network, you need to edit/move/copy the `conf/root/zerotier-public.toml` file.
+For instance for joining a private ZeroTier network, you need to edit the `conf/root/zerotier-public.toml` file.
+
+For all customization options see the [Configuration](../config/config.md) section.
 
 
 <a id="whatnext"></a>

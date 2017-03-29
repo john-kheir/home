@@ -18,9 +18,8 @@ This configuration file has the following sections:
 ```toml
 [main]
 max_jobs = 200
-message_ID_file = "/var/run/core.mid"
-include = "/etc/g8os/g8os.d"
-network = "/etc/g8os/network.toml"
+include = "/config/root"
+network = "/config/g8os/network.toml"
 log_level = "debug"
 ```
 
