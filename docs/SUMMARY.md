@@ -9,7 +9,7 @@
 * [Configuration](config/config.md)
   * [Main Configuration](config/generic.md)
   * [Network Configuration](config/network.md)
-  * [Other Configurations](other.md)
+  * [Other Configurations](config/other.md)
   * [Startup Services](config/startup.md)
 * [Interacting with G8OS](interacting/interacting.md)
   * [Available Commands](interacting/commands.md)
