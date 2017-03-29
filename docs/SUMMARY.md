@@ -11,6 +11,7 @@
 * [Configuration](config/config.md)
   * [Main Configuration](config/generic.md)
   * [Network Configuration](config/network.md)
+  * [Startup Services](startup.md)
 * [Interacting with G8OS](interacting/interacting.md)
   * [Available Commands](interacting/commands.md)
   * [Python Client](interacting/python.md)
