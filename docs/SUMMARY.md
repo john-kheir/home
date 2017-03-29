@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [G8OS Boot Process Flow](process/process.md)
 * [Getting Started](gettingstarted/gettingstarted.md)
   * [Installing G8OS on a Packet.net Server using AYS](gettingstarted/ays.md)
   * [Installing Core0 on a Docker Container](gettingstarted/docker.md)
@@ -27,3 +26,5 @@
 * [Networking](networking/networking.md)
   * [VXLAN](networking/vxlan.md)
   * [ZeroTier](networking/zerotier.md)
+* [Appendix](appendix/appendix.md)
+  * [G8OS Boot Process Flow](appendix/process.md)
