@@ -20,7 +20,7 @@ In order to boot the G8OS kernel via PXE, you can use the popular `PXELINUX` too
 
 - Save that config under `pxelinux.cfg/default` to run all your devices under G8OS
 
-## Per device PXE Boot
+## Per device PXE boot
 
 If you want to boot only some devices, you can symlink a special config for that MAC Address. Let assume you've put the config above on a `pxelinux.cfg/g8os`, on the `pxelinux.cfg` directory, run:
 

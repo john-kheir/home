@@ -79,6 +79,7 @@ Example:
 	batch_size = 1000
 ```
 
+See the section [Logging](../monitoring/logging.md) for more details about logging.
 
 <a id="stats"></a>
 ## stats
@@ -95,6 +96,9 @@ enabled = true
 flush_interval = 10 # seconds
 address = "127.0.0.1:6379"
 ```
+
+See the section [Stats](../monitoring/stats.md) for more details about stats.
+
 
 <a id="globals"></a>
 ## globals

@@ -138,7 +138,7 @@ If you have an EFI Shell, just run the kernel like any EFI executable.
 
 If you don't have the shell or want to boot it automatically, put the kernel in `/EFI/BOOT/BOOTX64.EFI` in a FAT partition.
 
-Example how to create a boot disk:
+Example on how to create a boot disk:
 
 ```shell
 dd if=/dev/zero of=g8os.img bs=1M count=64

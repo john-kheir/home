@@ -3,7 +3,7 @@
 Steps:
 
 - [Build a G8OS boot image](#build-image)
-- [Create a bootable disk](#create-bootable)
+- [Create a G8OS boot disk](#create-bootable)
 - [Create a new virtual machine on VirtualBox](#create-vm)
 - [Create a port forward from the VM to your host to expose the Redis of the core0](#create-portforward)
 - [Start the virtual machine](#start-vm)
@@ -13,11 +13,13 @@ Steps:
 <a id="build-image"></a>
 ## Build a G8OS boot image
 
-See the [initramfs README.md](https://github.com/g8os/initramfs/blob/master/README.md) to know how to proceed.
+See [Building your G8OS Boot Image](building/building.md).
 
 
 <a id="create-bootable"></a>
-## Create a bootable disk with the G8OS boot image created in previous step
+## Create a G8OS boot disk
+
+Using the G8OS boot image created in the previous step, you can easily create the G8OS boot disk as following:
 
 ```shell
 dd if=/dev/zero of=g8os.img bs=1M count=64
@@ -48,7 +50,7 @@ Before starting the virtual machine make sure you enabled the EFI support in the
 <a id="start-vm"></a>
 ## Start the VM
 
-Use the disk created a step 2 as boot disk
+Use the boot disk created in the second step as boot disk.
 
 <a id="ping-core0></a>
 ## Ping the core0
