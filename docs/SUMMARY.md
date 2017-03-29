@@ -8,7 +8,6 @@
   * [Network Configuration](config/network.md)
   * [Other Configurations](config/other.md)
   * [Startup Services](config/startup.md)
-  * [Logging](logging.md)
 * [Booting G8OS](booting/booting.md)
   * [Booting from USB](booting/usb.md)
   * [Booting from PXE Boot Server](booting/pxe.md)
