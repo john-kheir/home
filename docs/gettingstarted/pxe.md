@@ -15,10 +15,10 @@ PROMPT  1
 LABEL 1
     kernel g8os/vmlinuz.efi
 ```
-- Save that config under `pxelinux.cfg` as `default` file or a special name that you can symlink for specific devices.
+- Save that config under `pxelinux.cfg/default` to run all your devices under G8OS.
 
-# Symlink exemples
-If you want to boot only some devices, you can symlink a special config for that MAC Address:
+# Per device PXE Boot
+If you want to boot only some devices, you can symlink a special config for that MAC Address. Let assume you've put the config above on a `pxelinux.cfg/g8os`, on the `pxelinux.cfg` directory, run:
 ```
 ln -s g8os 01-2c-88-88-cd-2a-01
 ```
