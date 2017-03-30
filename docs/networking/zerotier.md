@@ -1,40 +1,46 @@
 # ZeroTier
 
-More info about Zerotier: https://zerotier.com/manual.shtml
+More info about ZeroTier: https://zerotier.com/manual.shtml
 
-## How to connect to a zerotier network
 
-For this example we assume you have a g8os node running and you can connect to it.
+## How to connect to a ZeroTier network
 
-The following code make your g8os node to join the a public network provided by zerotier.
+For this example we assume you have a G8OS node running and you can connect to it.
+
+The following code joins your G8OS node to the public network provided by ZeroTier:
+
 ```python
 import g8core
 
-cl = g8core.Client(host='ip of the g8os')
+cl = g8core.Client(host='{ip of the g8os}')
 cl.zerotier.join('8056c2e21c000001')
 ```
 
-To check all the joined network:
+To check all the joined networks:
+
 ```python
 import g8core
 
-cl = g8core.Client(host='ip of the g8os')
+cl = g8core.Client(host='{ip of the g8os}')
 cl.zerotier.list()
 ```
 
-and to leave a joined network
+And to leave a joined network:
+
 ```python
 import g8core
 
-cl = g8core.Client(host='ip of the g8os')
+cl = g8core.Client(host='{ip of the g8os}')
 cl.zerotier.leave('8056c2e21c000001')
 ```
 
-## How to create a container and make the container join a zerotier network
 
-You can also specify a zerotier network id when you create a container. This will make the container connect to the zerotier network just after creation. This is a nice way to allow people to reach you container without using natting.
+## How to create a container and make the container join a ZeroTier network
 
-Just pass the network id you want to join to the container create command of the client in the zerotier argument:
+You can also specify a ZeroTier network ID when you create a container. This will make the container connect to the ZeroTier network just after creation. This is a nice way to allow people to reach you container without using natting.
+
+Just pass the network ID you want to join to the container create command of the Python client in the ZeroTier argument:
+
 ```python
 import g8core
 
