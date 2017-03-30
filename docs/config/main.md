@@ -6,12 +6,12 @@ In the [g8os/initramfs](https://github.com/g8os/initramfs) repository that you'l
 
 `g8os.toml` has the following sections:
 
-- \[[main](#main)\]
-- \[[sink.{sink-name}](#sink)\]
-- \[[logging](#logging)\]
-- \[[stats](#stats)\]
-- \[[globals](#globals)\]
-- \[[extension.{extension-name}](#extension)\]
+- [\[main\]](#main)
+- [\[sink\]](#sink)
+- [\[logging\]](#logging)
+- [\[stats\]](#stats)
+- [\[globals\]](#globals)
+- [\[extension\]](#extension)
 
 
 <a id="main"></a>
