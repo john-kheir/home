@@ -2,7 +2,7 @@
 
 The AYS templates for installing a G8OS on a Packet.net server are available at https://github.com/g8os/ays_template_g8os.
 
-In what follows we discuss the steps to install G8OS using local AYS installation:
+In what follows we discuss the steps to install G8OS using a local AYS installation:
 
 - [Install AYS 8.2](#install-ays)
 - [Install the AYS templates](#install-templates)
@@ -33,9 +33,9 @@ bash install.sh
 <a id="packet-client"></a>
 ## Install the Python client for Packet.net
 
-The AYS templates will install a G8OS on a Packet.net server, and require the packet.net Python client for this.
+The AYS templates will install a G8OS on a Packet.net server.
 
-In order to install it execute:
+This requires the Packet.net Python client, in order to install it execute:
 
 ```
 pip3 install git+https://github.com/gigforks/packet-python.git --upgrade
@@ -46,10 +46,17 @@ pip3 install git+https://github.com/gigforks/packet-python.git --upgrade
 
 First update the `server.yaml` blueprint with your Packet.net token, the SSH key to authorize on the server and the description of the server you want to deploy.
 
+
+Then execute the first blueprint:
+
 ```
-# execute the first blueprint
 ays blueprint 1_server.yaml
-# execute the run
+```
+
+
+And finally start the run:
+
+```
 ays run create --follow
 ```
 
@@ -112,9 +119,7 @@ g8os_client__main:
 Then execute the blueprint and create a run:
 
 ```
-# execute the first blueprint
 ays blueprint 2_g8os.yaml
-# execute the run
 ays run create --follow
 ```
 
