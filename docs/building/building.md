@@ -120,23 +120,33 @@ If you are modifying core0/coreX, you can simply use the `--cores --kernel` opti
 <a id="custom"></a>
 ## Customize build
 
-You can customize your build for some service, for example, you might want to join a private ZeroTier network during boot instead of joining (by default) the ZeroTier Earth network.
+In order to customize you need to add a configuration file for a new service or update the configuration files of one of existing services in the `conf/root/` directory.
 
-In order to customize you need to add your own services to the `conf/root/` directory.
+For example, you might want to join a private ZeroTier network during boot instead of joining (by default) the ZeroTier Earth network. This is achieved by updating the `conf/root/zerotier-public.toml` file:
 
-For instance for joining a private ZeroTier network, you need to edit the `conf/root/zerotier-public.toml` file.
+```toml
+## Joining a network
+[startup."join-network"]
+name = "zerotier.join"
+after = ["zerotier"]
 
-For all customization options see the [Configuration](../config/config.md) section.
+[startup."join-network".args]
+network = "8056c2e21c000001"
+```
+
+See [Startup Services](../config/startup.md) in order to understand how to configure the startup services.
+
+For all customization options see [Configuration](../config/config.md).
 
 
 <a id="whatnext"></a>
 ## I have the kernel, what can I do with it?
 
-Just boot it. The kernel image is EFI bootable.
+Just boot it. The G8OS boot image (kernel) is EFI bootable.
 
-If you have an EFI Shell, just run the kernel like any EFI executable.
+If you have an EFI shell, just run the kernel like any EFI executable.
 
-If you don't have the shell or want to boot it automatically, put the kernel in `/EFI/BOOT/BOOTX64.EFI` in a FAT partition.
+If you don't have the shell or want to boot it automatically, save the kernel in `/EFI/BOOT/BOOTX64.EFI` in a FAT partition.
 
 Example on how to create a boot disk:
 

@@ -1,8 +1,10 @@
 # Booting from USB
 
-On a EFI enabled machine, it's really easy to boot the G8OS kernel. No bootloader needed. All you need is to copy the kernel on a `FAT32` partition.
+On a EFI enabled machine, it's really easy to boot the G8OS kernel. No bootloader needed.
 
-## On Linux
+All you need is to copy the G8OS boot image (kernel) on the `FAT32` partition of the boot device, for instance a USB device.
+
+## Creating an USB device with the G8OS boot image on Linux
 
 We assume that your USB device is `/dev/sdc`, you can make boot the kernel as following:
 
@@ -10,6 +12,6 @@ We assume that your USB device is `/dev/sdc`, you can make boot the kernel as fo
 - Mount the partition: `mount /dev/sdc /mnt/g8os-usb`
 - Create the EFI directories: `mkdir -p /mnt/g8os-usb/EFI/BOOT`
 - Copy the kernel: `cp v /mnt/g8os-usb/EFI/BOOT/BOOTX64.EFI`
-- Unmount the USB Device: `umount /mnt/g8os-usb`
+- Unmount the USB device: `umount /mnt/g8os-usb`
 
-You can now boot on the USB Device with your EFI Enabled system.
+You can now boot from the USB device on your EFI enabled system.
