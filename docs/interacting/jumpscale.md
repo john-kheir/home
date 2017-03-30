@@ -33,7 +33,7 @@ def main():
         embed()
         raise RuntimeError("stop debug here")
         container_id = cl.container.create(
-            'https://hub.gig.tech/maxux/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
+            'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
         print("[+] container created, ID: %s" % container_id)
     except Exception as e:
         print("[-] error during container creation: %s" % e)

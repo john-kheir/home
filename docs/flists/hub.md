@@ -1,8 +1,8 @@
 # Hub
 
-The hub is active on `http://hub.gig.tech`, here you find all flists shared by the G8OS community. 
+The hub is active on `http://hub.gig.tech`, here you find all flists shared by the G8OS community.
 
-See for instance the Ubuntu 16.04 flist of the user maxux: https://hub.gig.tech/maxux/flist-ubuntu1604.flist
+See for instance the Ubuntu 16.04 flist of the user maxux: https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist
 
 
 ## Setting up your own Hub instance

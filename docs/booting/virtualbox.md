@@ -52,7 +52,7 @@ Before starting the virtual machine make sure you enabled the EFI support in the
 
 Use the boot disk created in the second step as boot disk.
 
-<a id="ping-core0></a>
+<a id="ping-core0"></a>
 ## Ping the core0
 
 Using the Python client:
