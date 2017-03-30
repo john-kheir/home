@@ -1,22 +1,30 @@
 # Monitoring
 
-## Introduction
+All running process can report logs about its operations using the same [logging](logging.md) mechanism.
 
-Monitoring is the process of collecting metrics about the system and the health of the services.
+- See [Logging](logging.md) for details about how log information is processed and reported
+- See [Statistics](stats.md) for details about how statistics are reported using log messages
 
-Any running process can report logs and statistics about its operations to its core (core0 or coreX) using the same [logging](logging.md) mechanism.
+Monitoring is one of the processes that come with Core0. It collects metrics about the system. It reports about it using the [Logging](logging.md) mechanism. As documented in [Statistics](stats.md) the default monitoring process uses **log level 10**, which is the reserved log level for logging statistics.
 
-One of the reserved log message levels is log level `10` which is reserved for stats reporting. It basically means that a process can output a message like:
+Here's an example of a statistics log message:
 
 ```
-10::some.metric.key:23.12|A
+10::{monitoring-metric}:23.12|A
 ```
 
-To report that the value of `some.metric.key` at time `now` is `32.12` and the reported values should be averaged over the defined aggregator period (usually `5 minutes`)
+This example log message is reporting a statistic (log level 10) and reports that the metric `{monitoring-metric}` is `23.12` and the reported values should be averaged over the defined aggregator period (usually 5 minutes), as indicated by the `A`; see [Statistics](stats.md) for more details about this statistics log message format.
 
-## Built in monitoring
+See below for:
 
-Core0 has built-in monitoring commands that when called reports the following metrics:
+- [Monitoring metrics](#metrics)
+- [Configuring monitoring](#config)
+
+
+<a id="metrics"></a>
+## Monitoring metrics
+
+The built-in/default monitoring logs statistics for following metrics:
 
 ```
 disk.iops.read@phys.sda
@@ -70,20 +78,38 @@ network.throughput.outgoing@phys.lo
 network.throughput.outgoing@phys.zt0
 ```
 
-It's not automated to run by default, but by including this [config](../core0/conf/monitor.toml) it will be scheduled to run automatically and report system metrics
 
+<a id="config></a>
+## Configuring Monitoring
 
-## Where do the metrics go anyway?
-
-The metrics will be pushed to our Redis stored procedure that do the aggregation of the metrics and then push all the aggregated metrics (every 5 minutes and every 1 hour) to specific Redis queues. Later own, a 3rd party software can pull the aggregated metrics and push it to a graph-able database like `influxdb` for visuals.
-
-The 2 queues to hold the aggregated metrics are:
-
-- queues:stats:min
-- queues:stats:hour
-
-Each object in the queue is a string that is formatted as following:
+The built-in/default monitoring is scheduled to run automatically as defined in the `conf/monitor.toml` configuration file:
 
 ```
-node|key|epoch|last reported value|calcluated avg|max reported value|total
+[startup."monitor.cpu"]
+name = "monitor"
+recurring_period = 30 #seconds
+
+[startup."monitor.cpu".args]
+domain = "cpu"
+
+[startup."monitor.memory"]
+name = "monitor"
+recurring_period = 30 #seconds
+
+[startup."monitor.memory".args]
+domain = "memory"
+
+[startup."monitor.disk"]
+name = "monitor"
+recurring_period = 30 #seconds
+
+[startup."monitor.disk".args]
+domain = "disk"
+
+[startup."monitor.network"]
+name = "monitor"
+recurring_period = 30 #seconds
+
+[startup."monitor.network".args]
+domain = "network"
 ```

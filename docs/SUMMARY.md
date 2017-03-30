@@ -20,7 +20,7 @@
   * [Go Client](interacting/go.md)
 * [Monitoring](monitoring/monitoring.md)
   * [Logging](monitoring/logging.md)
-  * [Stats](monitoring/stats.md)
+  * [Statistics](monitoring/stats.md)
 * [Flists](flists/flists.md)
   * [Creating Flists](flists/creating.md)
   * [Merging Flists](flists/merging.md)
