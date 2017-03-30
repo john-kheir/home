@@ -149,4 +149,4 @@ cp staging/vmlinuz.efi /mnt/EFI/BOOT/BOOTX64.EFI
 umount /mnt
 ```
 
-See [Installing G8OS](../installing/installing.md) for other options.
+See [Booting G8OS](../booting/booting.md) for other options.
