@@ -22,7 +22,7 @@ See [Building your G8OS Boot Image](building/building.md).
 Using the G8OS boot image created in the previous step, you can easily create the G8OS boot disk as following:
 
 ```shell
-dd if=/dev/zero of=g8os.img bs=1M count=64
+dd if=/dev/zero of=g8os.img bs=1M count=90
 mkfs.vfat g8os.iso
 mount g8os.iso /mnt
 mkdir -p /mnt/EFI/BOOT
@@ -58,7 +58,7 @@ Use the boot disk created in the second step as boot disk.
 Using the Python client:
 
 ```python
-from g8os.client import Client
-cl = Client(self, host, port=6379, password='')
+import g8core
+cl = g8core.Client(self, host, port=6379, password='')
 cl.ping() # this should return 'pong'
 ```

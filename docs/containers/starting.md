@@ -17,6 +17,9 @@ Steps:
 The below script will create a partition on the actual device. The data disk is not required, it is just to show a full example of a real life container scenario. So you can also skip this and create a container with no data disks. Alternatively you can create a loop device (against a file) for testing.
 
 ```python
+import g8core
+cl = g8core.Client("IP OF G8OS")
+
 # A new disk required a partition table
 cl.disk.mktable('/dev/sdb')
 
@@ -44,14 +47,17 @@ cl.btrfs.subvol_create('/data/vol1')
 
 We will create a very basic container that only mounts the root filesystem.
 
-We use this flist for testing: `https://stor.jumpscale.org/stor2/flist/ubuntu-g8os-flist/ubuntu-g8os.flist`.
+We use this flist for testing: `https://hub.gig.tech/gig-official-apps/ubuntu1604.md`.
 
 Here's the Python script using the G8OS client:
 
 ```python
-flist = 'https://stor.jumpscale.org/stor2/flist/ubuntu-g8os-flist/ubuntu-g8os.flist'
+import g8core
+cl = g8core.Client("IP OF G8OS")
 
-container_id = cl.container.create(flist, mount=mount)
+flist = 'https://hub.gig.tech/gig-official-apps/ubuntu1604.flist'
+
+container_id = cl.container.create(flist, storage='ardb://hub.gig.tech:16379')
 container = cl.container.client(container_id)
 
 print(container.system('ls -l /opt').get())

@@ -151,7 +151,7 @@ If you don't have the shell or want to boot it automatically, save the kernel in
 Example on how to create a boot disk:
 
 ```shell
-dd if=/dev/zero of=g8os.img bs=1M count=64
+dd if=/dev/zero of=g8os.img bs=1M count=90
 mkfs.vfat g8os.iso
 mount g8os.iso /mnt
 mkdir -p /mnt/EFI/BOOT

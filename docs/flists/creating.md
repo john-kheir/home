@@ -1,5 +1,7 @@
 # Creating Flists
 
+The easiest way to create a flist is using our [Hub](hub.md), but if you want to create it manually, read the following.
+
 To create a flist you need [JumpScale](https://github.com/Jumpscale/jumpscale_core8#how-to-install-from-master).
 
 Using the JumpScale client it actually takes 2 steps:
@@ -9,9 +11,10 @@ Using the JumpScale client it actually takes 2 steps:
 - [Share your flist DB](3share)
 
 <a id="create-db"></a>
-##Creation of the flist DB
+## Creation of the flist DB
 
 ```python
+from JumpScale import j
 # open a connection to a RocksDB database
 kvs = j.servers.kvs.getRocksDBStore(name='flist', namespace=None, dbpath="/tmp/flist-example.db")
 # create a flist object and pass the reference of the RocksDB to it

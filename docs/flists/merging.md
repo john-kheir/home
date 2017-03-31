@@ -7,6 +7,7 @@ The flist library in JumpScale provides you with a tool to merge two or more fli
 Here is an example script:
 
 ```python
+from JumpScale import j
 # uncomress flist db
 j.sal.fs.targzUncompress('/tmp/app_a.db.tar.gz','/tmp/app_a.db')
 # open the connection to the RocksDB of the application A

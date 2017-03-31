@@ -6,12 +6,13 @@ The below script expects that you know the IP address of the Core0 and that you 
 
 See the [Getting Started](../gettingstarted/gettingstarted.md) section for the G8OS installation options.
 
-```
+The following script create a container, install openssh, authorize a ssh key insde the container and start the openssh server
+```python
 import sys
 import time
 from JumpScale import j
 
-SSHKEY = j.clients.ssh.SSHKeyGetFromAgentPub("ovh_install")
+SSHKEY = j.clients.ssh.SSHKeyGetFromAgentPub("id_rsa")
 CORE0IP = "{core0-ip-address}"
 ZEROTIER = "{zerotier-network-id}"
 
@@ -28,10 +29,6 @@ def main():
 
     try:
         print("[+] create container")
-        from IPython import embed
-        print("DEBUG NOW 987")
-        embed()
-        raise RuntimeError("stop debug here")
         container_id = cl.container.create(
             'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
         print("[+] container created, ID: %s" % container_id)
@@ -50,10 +47,6 @@ def main():
     container.system('/etc/init.d/ssh start').get()
 
     print("[+] get zerotier ip")
-    from IPython import embed
-    print("DEBUG NOW iu")
-    embed()
-    raise RuntimeError("stop debug here")
     container_ip = get_zerotier_ip(container)
 
     print("[+] you can ssh into your container at root@%s" % container_ip)

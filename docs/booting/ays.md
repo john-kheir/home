@@ -105,54 +105,11 @@ Recurring actions: None
 Event filters: None
 ```
 
+<a id="connect"></a>
+## Connect to the G8OS
+```python
+import g8core
 
-<a id="install-g8os"></a>
-## Install the G8OS on your Packet.net server
-
-First update the `2_g8os.yaml` blueprint with the IP address of the server you got from the previous step:
-
-```
-g8os_client__main:
-  redisAddr: 'PUT THE IP HERE'
-```
-
-Then execute the blueprint and create a run:
-
-```
-ays blueprint 2_g8os.yaml
-ays run create --follow
-```
-
-Your container should now be running.
-
-You can inspect it to see its ZeroTier IP:
-
-```
-ays service show -r container
-
-Service: ubuntu2 - Role: container
-state : ok
-key : 64cc03d7bbe7317e1a5fc88a231bcd01
-
-Instance data:
-- hostname : ubuntu2
-- id : 1
-- node : ubuntu
-- zerotierID : e5cd7a9e1c0270be
-- zerotierIP : 192.168.193.120
-
-Parent:
-node!ubuntu
-
-Children: None
-
-Producers:
-node!ubuntu
-
-Consumers: None
-
-Recurring actions:
-monitor: period:1.0 minutes last run:2017/03/18 12:03:51
-
-Event filters: None
+client = g8core.Client('147.75.101.117')
+client.ping()
 ```
