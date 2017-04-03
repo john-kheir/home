@@ -1,4 +1,4 @@
-# Btrfs Management Commands
+# Btrfs Commands
 
 Available Commands:
 

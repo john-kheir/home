@@ -1,4 +1,4 @@
-# CoreX Management Commands
+# CoreX Commands
 
 Available commands:
 

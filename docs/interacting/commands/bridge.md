@@ -1,4 +1,4 @@
-# Bridge Management Commands
+# Bridge Commands
 
 Available Commands:
 

@@ -23,4 +23,4 @@ container = cl.container.client(container_id)
 print(container.system('ls -l /opt').get())
 ```
 
-See [Container Management](../interacting/commands/container/container.md) for all available commands for managing containers.
+See [CoreX Commands](../interacting/commands/corex.md) for all available commands for managing containers.

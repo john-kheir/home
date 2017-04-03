@@ -1,4 +1,4 @@
-# Disk Management Commands
+# Disk Commands
 
 Available Commands:
 
