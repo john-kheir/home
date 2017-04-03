@@ -12,66 +12,109 @@ Available Commands:
 
 <a id="list"></a>
 ## disk.list
-Takes no arguments.
-List all block devices (similar to lsblk)
+
+List all available block devices, similar to the `lsblk` command. It takes no arguments.
 
 
 <a id="mktable"></a>
 ## disk.mktable
+
+Creates a new partition table on block device.
+
 Arguments:
+
 ```javascript
 {
-    "disk": "/dev/disk", //device
-    "table_type": "gpt", //partition table type
+    "disk": "{disk}",
+    "table_type": "{table_type}",
 }
 ```
-Creates a new partition table on device. `table_type` can be any value
-that is supported by `parted mktable`
+
+Values:
+
+- **disk**: Full device path like `/dev/sda`
+- **table_type**: Any value that is supported by `parted mktable`.
 
 
 <a id="mkpart"></a>
 ## disk.mkpart
+
+Creates a partition on a given device.
+
 Arguments:
+
 ```javascript
 {
-    "disk": "/dev/disk", //device
-    "part_type": "primary", //part_type
-    "start": "1", //start sector
-    "end": "100%", //end sector
+    "disk": "{disk}",
+    "part_type": "primary",
+    "start": "{start}",
+    "end": "{end}",
 }
 ```
-Creates a partition on given device. `part_type`, `start`, and `end` values must
-be supported by the `parted mkpart` command
+
+Values:
+
+- **disk**: Full device path like `/dev/sda`.
+- **part_type**: Partition type as accepted by `parted mkpart`, e.g. `primary`
+- **start**: Partition start as accepted by `parted mkpart`, e.g. `1`
+- **end**: partition end as accepted by `parted mkpart`, e.g. `100%`
 
 
 <a id="rmpart"></a>
 ## disk.rmpart
+
+Removes a partition from given block device with given 1 based index.
+
 Arguments:
+
 ```javascript
 {
-    "disk": "/dev/disk", //device
-    "number": 1, //parition number (1 based index)
+    "disk": "{disk}",
+    "number": "{number}",
 }
 ```
-Removes a partition on given device with given 1 based index.
+
+Values:
+
+- **disk**: Full device path, e.g. `/dev/disk`
+- **number**: Partition number, starting from `1`
 
 
 <a id="mount"></a>
 ## disk.mount
+
+Mount partition on target.
+
 Arguments:
+
 ```javascript
 {
-    "options": "auto", //mount options (required) if no options are needed set to "auto"
-    "source": "/dev/part", //patition to mount
-    "target": "/mnt/data", //location to mount on
+    "options": "{optios}",
+    "source": "{source}",
+    "target": "{target}",
 }
 ```
 
+Values:
+
+- **options**: Optional mount options, if no options are needed set to "auto"
+- **source**: Full partition path like `/dev/sda1`
+- **target**: Mount point, e.g. `/mnt/data`
+
+
 <a id="umount"></a>
 ## disk.umount
+
+Unmounts a partition.
+
 Arguments:
+
 ```javascript
 {
-    "source": "/dev/part", //partition to umount
+    "source": "{source}",
 }
 ```
+
+Values:
+
+- **source**: Full partition path like `/dev/sda1`
