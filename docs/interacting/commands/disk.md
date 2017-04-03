@@ -5,6 +5,7 @@ Available Commands:
 - [disk.list](#list)
 - [disk.mktable](#mktable)
 - [disk.mkpart](#mkpart)
+- [disk.getinfo](#getinfo)
 - [disk.rmpart](#rmpart)
 - [disk.mount](#mount)
 - [disk.umount](#umount)
@@ -22,7 +23,6 @@ List all available block devices, similar to the `lsblk` command. It takes no ar
 Creates a new partition table on block device.
 
 Arguments:
-
 ```javascript
 {
     "disk": "{disk}",
@@ -31,7 +31,6 @@ Arguments:
 ```
 
 Values:
-
 - **disk**: Full device path like `/dev/sda`
 - **table_type**: Any value that is supported by `parted mktable`.
 
@@ -42,22 +41,36 @@ Values:
 Creates a partition on a given device.
 
 Arguments:
-
 ```javascript
 {
     "disk": "{disk}",
-    "part_type": "primary",
-    "start": "{start}",
-    "end": "{end}",
+    "part_type": "{part-type}",
 }
 ```
 
 Values:
-
 - **disk**: Full device path like `/dev/sda`.
-- **part_type**: Partition type as accepted by `parted mkpart`, e.g. `primary`
+- **part-type**: Partition type as accepted by `parted mkpart`, e.g. `primary`
 - **start**: Partition start as accepted by `parted mkpart`, e.g. `1`
 - **end**: partition end as accepted by `parted mkpart`, e.g. `100%`
+
+
+<a id="getinfo"></a>
+## disk.getinfo
+
+Get more info about a disk or a disk partition, return as a dict with {"blocksize", "start", "size", and "free" sections}.
+
+Arguments:
+```javascript
+{
+    "disk": "{disk}",
+    "part": "{partition}",
+}
+```
+
+Values:
+- **disk**: Full device path like `/dev/sda`.
+- **partition**: e.g. `sda1, sdb2`
 
 
 <a id="rmpart"></a>
@@ -66,7 +79,6 @@ Values:
 Removes a partition from given block device with given 1 based index.
 
 Arguments:
-
 ```javascript
 {
     "disk": "{disk}",
@@ -75,7 +87,6 @@ Arguments:
 ```
 
 Values:
-
 - **disk**: Full device path, e.g. `/dev/disk`
 - **number**: Partition number, starting from `1`
 
@@ -86,7 +97,6 @@ Values:
 Mount partition on target.
 
 Arguments:
-
 ```javascript
 {
     "options": "{optios}",
@@ -96,7 +106,6 @@ Arguments:
 ```
 
 Values:
-
 - **options**: Optional mount options, if no options are needed set to "auto"
 - **source**: Full partition path like `/dev/sda1`
 - **target**: Mount point, e.g. `/mnt/data`
@@ -108,7 +117,6 @@ Values:
 Unmounts a partition.
 
 Arguments:
-
 ```javascript
 {
     "source": "{source}",
@@ -116,5 +124,4 @@ Arguments:
 ```
 
 Values:
-
 - **source**: Full partition path like `/dev/sda1`
