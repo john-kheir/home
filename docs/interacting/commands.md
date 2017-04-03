@@ -26,42 +26,45 @@ The `Core0` Core understands a very specific set of management commands:
 
 
 - [Basic commands](#basic-commands)
-    - core.ping
-    - core.system
-    - core.kill
-    - core.killall
-    - core.state
-    - core.reboot
+  - core.ping
+  - core.system
+  - core.kill
+  - core.killall
+  - core.state
+  - core.reboot
 - [Info query](#info-query)
-    - info.cpu
-    - info.disk
-    - info.mem
-    - info.nic
-    - info.os
+  - info.cpu
+  - info.disk
+  - info.mem
+  - info.nic
+  - info.os
 - [CoreX management](#corex-management)
-    - corex.create
-    - corex.list
-    - corex.dispatch
-    - corex.terminate
+  - corex.create
+  - corex.list
+  - corex.dispatch
+  - corex.terminate
 - [Bridge management](#bridge-management)
-    - bridge.create
-    - bridge.list
-    - bridge.delete
-- [Disk Management](#disk-management)
-    - disk.list
-    - disk.mktable
-    - disk.mkpart
-    - disk.rmpart
-    - disk.mount
-    - disk.umount
-
-<a id="btrfs-management"></a>
-- [Btrfs Management](#btrfs-management)
-    - btrfs.create
-    - btrfs.list
-    - btrfs.subvol_create
-    - btrfs.subvol_list
-    - btrfs.subvol_delete
+  - bridge.create
+  - bridge.list
+  - bridge.delete
+- [Disk management](#disk-management)
+  - disk.list
+  - disk.mktable
+  - disk.mkpart
+  - disk.rmpart
+  - disk.mount
+  - disk.umount
+- [Btrfs management](#btrfs-management)
+  - btrfs.create
+  - btrfs.list
+  - btrfs.subvol_create
+  - btrfs.subvol_list
+  - btrfs.subvol_delete
+- [Container management](container/container.md)
+  - container.create
+	- container.list
+	- container.terminate
+	- container.client
 
 <a id="basic-commands"></a>
 ## Basic commands
@@ -202,7 +205,7 @@ Arguments:
 Delete the given bridge name
 
 <a id="disk-management"></a>
-## Disk Management
+## Disk management
 
 ### disk.list
 Takes no arguments.
@@ -261,7 +264,7 @@ Arguments:
 ```
 
 <a id="btrfs-management"></a>
-## Btrfs Management
+## Btrfs management
 
 ### btrfs.create
 
@@ -279,13 +282,13 @@ Arguments:
 
 ### btrfs.list
 
-List all btrfs filesystems.
+List all Btrfs filesystems.
 
 Takes no argument. Return array of all filesystems.
 
 ### btrfs.subvol_create
 
-Creates a new btrfs subvolume
+Creates a new Btrfs subvolume
 
 arguments:
 ```javascript
@@ -307,7 +310,7 @@ arguments:
 
 ### btrfs.subvol_delete
 
-Delete a btrfs subvolume
+Delete a Btrfs subvolume
 
 arguments:
 ```javascript

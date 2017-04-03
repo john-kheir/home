@@ -2,7 +2,7 @@
 
 Pre-requirements:
 
-- Make sure you have a working Core0 based on Docker or VirtualBox
+- Make sure you have a working Core0 instance running
 - Make sure you can create a Python client instance and you can reach the Core0
 
 In the below example a very basic container is created that only mounts the root filesystem.
@@ -22,3 +22,5 @@ container = cl.container.client(container_id)
 
 print(container.system('ls -l /opt').get())
 ```
+
+See [Container Management](../interacting/commands/container/container.md) for all available commands for managing containers.
