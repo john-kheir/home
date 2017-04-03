@@ -24,6 +24,7 @@ When started it first configures the networking, and then starts a local Redis i
 
 The `Core0` Core understands a very specific set of management commands:
 
+
 - Basic Commands
     - core.ping
     - core.system
@@ -46,6 +47,8 @@ The `Core0` Core understands a very specific set of management commands:
     - bridge.create
     - bridge.list
     - bridge.delete
+
+<a id="disk-management"></a>		
 - Disk Management
     - disk.list
     - disk.mktable
@@ -53,6 +56,8 @@ The `Core0` Core understands a very specific set of management commands:
     - disk.rmpart
     - disk.mount
     - disk.umount
+
+<a id="btrfs-management"></a>
 - Btrfs Management
     - btrfs.create
     - btrfs.list
