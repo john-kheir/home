@@ -32,3 +32,4 @@ The `Core0` Core understands a very specific set of management commands:
 - [Disk commands](disk.md)
 - [Btrfs commands](btrfs.md)
 - [ZeroTier commands](zerotier.md)
+- [KVM commands](kvm.md)
