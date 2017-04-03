@@ -6,7 +6,8 @@ The below script expects that you know the IP address of the Core0 and that you 
 
 See the [Getting Started](../gettingstarted/gettingstarted.md) section for the G8OS installation options.
 
-The following script create a container, install openssh, authorize a ssh key insde the container and start the openssh server
+The following script creates a container, installs OpenSSH, authorizes a SSH key inside the container and start the OpenSSH server.
+
 ```python
 import sys
 import time
@@ -18,38 +19,38 @@ ZEROTIER = "{zerotier-network-id}"
 
 
 def main():
-    print("[+] connect to core0")
+    print("[+] Connect to Core0")
     cl = j.clients.g8core.get(CORE0IP)
 
     try:
         cl.ping()
     except Exception as e:
-        print("cannot connect to the core0: %s" % e)
+        print("Cannot connect to the Core0: %s" % e)
         return 1
 
     try:
-        print("[+] create container")
+        print("[+] Create container")
         container_id = cl.container.create(
             'https://hub.gig.tech/gig-official-apps/flist-ubuntu1604.flist', zerotier=ZEROTIER, storage='ardb://hub.gig.tech:16379')
         print("[+] container created, ID: %s" % container_id)
     except Exception as e:
-        print("[-] error during container creation: %s" % e)
+        print("[-] Error during container creation: %s" % e)
         return 1
 
     container = cl.container.client(container_id)
 
-    print("[+] authorize ssh key")
+    print("[+] Authorize SSH key")
     container.system('bash -c "echo \'%s\' > /root/.ssh/authorized_keys"' % SSHKEY)
 
     container.system("apt install ssh -y").get()
 
-    print("[+] start ssh daemon")
+    print("[+] Start ssh daemon")
     container.system('/etc/init.d/ssh start').get()
 
-    print("[+] get zerotier ip")
+    print("[+] Get ZeroTier IP address")
     container_ip = get_zerotier_ip(container)
 
-    print("[+] you can ssh into your container at root@%s" % container_ip)
+    print("[+] You can SSH into your container at root@%s" % container_ip)
 
 
 def get_zerotier_ip(container):
@@ -66,7 +67,7 @@ def get_zerotier_ip(container):
         time.sleep(2)
         i += 1
 
-    raise TimeoutError("[-] couldn't get an ip on ZeroTier network")
+    raise TimeoutError("[-] Couldn't get an IP address on ZeroTier network")
 
 if __name__ == '__main__':
     main()
