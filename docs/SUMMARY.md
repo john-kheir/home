@@ -29,7 +29,7 @@
   * [VXLAN](networking/vxlan.md)
   * [ZeroTier](networking/zerotier.md)
 * [Storage](storage/storage.md)
-  * [Creating Disks](storage/creating,md)
+  * [Creating Disks](storage/creating.md)
 * [Containers](containers/containers.md)
   * [Starting Containers](containers/starting.md)
 * [Appendix](appendix/appendix.md)

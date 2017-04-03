@@ -25,31 +25,29 @@ When started it first configures the networking, and then starts a local Redis i
 The `Core0` Core understands a very specific set of management commands:
 
 
-- Basic Commands
+- [Basic commands](#basic-commands)
     - core.ping
     - core.system
     - core.kill
     - core.killall
     - core.state
     - core.reboot
-- Info Query
+- [Info query](#info-query)
     - info.cpu
     - info.disk
     - info.mem
     - info.nic
     - info.os
-- CoreX Management
+- [CoreX management](#corex-management)
     - corex.create
     - corex.list
     - corex.dispatch
     - corex.terminate
-- Bridge
+- [Bridge management](#bridge-management)
     - bridge.create
     - bridge.list
     - bridge.delete
-
-<a id="disk-management"></a>		
-- Disk Management
+- [Disk Management](#disk-management)
     - disk.list
     - disk.mktable
     - disk.mkpart
@@ -58,14 +56,15 @@ The `Core0` Core understands a very specific set of management commands:
     - disk.umount
 
 <a id="btrfs-management"></a>
-- Btrfs Management
+- [Btrfs Management](#btrfs-management)
     - btrfs.create
     - btrfs.list
     - btrfs.subvol_create
     - btrfs.subvol_list
     - btrfs.subvol_delete
 
-## Commands arguments
+<a id="basic-commands"></a>
+## Basic commands
 
 ### core.ping
 Doesn't take any arguments. Returns a "pong". Main use case is to check wether the core is responding.
@@ -106,6 +105,10 @@ Returns aggregated state of all processes plus the consumption of core0 itself (
 Takes no arguments.
 Immediately reboot the machine.
 
+
+<a id="info-query"></a>
+## Info query
+
 ### info.cpu
 Takes no arguments.
 Returns information about the host CPU types, speed and capabilities
@@ -125,6 +128,9 @@ Returns information about the host attached NICs, and IPs
 ### info.os
 Takes no arguments.
 Returns information about the host OS.
+
+<a id="corex-management"></a>
+## CoreX management
 
 ### corex.create
 Arguments:
@@ -169,6 +175,9 @@ Arguments:
 }
 ```
 
+<a id="bridge-management"></a>
+## Bridge management
+
 ### bridge.create
 Arguments:
 ```javascript
@@ -191,6 +200,9 @@ Arguments:
 }
 ```
 Delete the given bridge name
+
+<a id="disk-management"></a>
+## Disk Management
 
 ### disk.list
 Takes no arguments.
@@ -247,6 +259,9 @@ Arguments:
     "source": "/dev/part", //partition to umount
 }
 ```
+
+<a id="btrfs-management"></a>
+## Btrfs Management
 
 ### btrfs.create
 
