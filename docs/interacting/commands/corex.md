@@ -1,16 +1,37 @@
-# Container Management
+# CoreX Management Commands
 
 Available commands:
-- [container.create](#create)
-- [container.list](#list)
-- [container.terminate](#terminate)
-- [container.client](#client)
+
+- [corex.create](#create)
+- [corex.list](#list)
+- [corex.terminate](#terminate)
+- [corex.client](#client)
 
 
 <a id="create"></a>
-## container.create
+## corex.create
 
 Creates a new container with the given root plist, mount points and ZeroTier ID, and connects it to the given bridges.
+
+
+Arguments:
+
+```javascript
+{
+    "plist": "http://url/to/plist",
+    "mount": {
+        "/host/directory": "/container/directory"
+    },
+    "network": {
+        "zerotier": "zerotier network id", //options
+        "bridge": [], //list of bridges names to connect to
+    }
+    //TODO:
+    "port": {
+        host_port: container_port,
+    }
+}
+```
 
 Arguments:
 
@@ -47,6 +68,33 @@ Values:
   Example: `port={8080: 80, 7000:7000}`
 
 - **hostname**: Specific hostname you want to give to the container, if None it will automatically be set to core-x, x being the ID of the container
+
+
+
+### corex.list
+Takes no arguments.
+List all available `live` Cores on a host.
+
+### corex.terminate
+Arguemnts:
+```javascript
+{
+    "container": container_id,
+}
+```
+Destroys a Core and stops the Core processes. It takes a mandatory core ID.
+
+### corex.dispatch
+Arguments:
+```javascript
+{
+     "container": core_id,
+     "command": {
+         //the full command payload
+     }
+}
+```
+
 
 
 <a id="list"></a>
