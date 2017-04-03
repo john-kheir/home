@@ -31,7 +31,7 @@
 * [Storage](storage/storage.md)
   * [Creating Disks](storage/creating.md)
 * [Containers](containers/containers.md)
-  * [Starting Containers](containers/starting.md)
+  * [Creating Containers](containers/creating.md)
 * [Appendix](appendix/appendix.md)
   * [G8OS Boot Process Flow](appendix/process.md)
   * [Installing Core0 on a Docker Container](appendix/docker.md)
