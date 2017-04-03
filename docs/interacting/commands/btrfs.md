@@ -12,60 +12,73 @@ Available Commands:
 <a id="create"></a>
 ## btrfs.create
 
-Create a btrfs filesystem
+Create a Btrfs filesystem with the given label, devices, and profiles.
 
 Arguments:
 ```javascript
 {
-    "label": "FS label/name", // required
-    "devices": ["/dev/sdc1", "/dev/sdc2"], // the devices, required
-    "data": "data profile",
-    "metadata": "metadata profile"
+    "label": "{label}",
+    "devices": ["/dev/sdc1", "/dev/sdc2"],
+    "data": "{data-profile}",
+    "metadata": "{metadata-profile}"
 }
 ```
+
+Values:
+- **label**: Name/label.
+- **devices**: Array of devices, e.g. `["/dev/sdc1", "/dev/sdc2"]`
+- **data-profile**: `raid0`, `raid1`, `raid5`, `raid6`, `raid10`, `dup` or `single`
+- **metadata-profile**: Same as data-profile
+
 
 <a id="list"></a>
 ## btrfs.list
 
-List all Btrfs filesystems.
-
-Takes no argument. Return array of all filesystems.
+List all Btrfs filesystems. It takes no arguments. Return array of all filesystems.
 
 
 <a id="subvol_create"></a>
 ## btrfs.subvol_create
 
-Creates a new Btrfs subvolume
+Creates a new Btrfs subvolume in the specified path.
 
 arguments:
 ```javascript
 {
-    "path": "/path/of/subvolume" required
+    "path": "{path}"
 }
 ```
 
+Values:
+- **path**: Path where to create the subvolume, e.g. `/path/of/subvolume`
 
 <a id="subvol_list"></a>
 ## btrfs.subvol_list
 
-List subvolume under a path
+Lists all subvolume under a path.
 
 arguments:
 ```javascript
 {
-    "path": "/path/of/filesystem" required
+    "path": "{path}"
 }
 ```
+
+Values:
+- **path**: Path to list.
 
 
 <a id="subvol_delete"></a>
 ## btrfs.subvol_delete
 
-Delete a Btrfs subvolume
+Deletes a Btrfs subvolume in the specified path.
 
 arguments:
 ```javascript
 {
-    "path": "/path/of/subvolume" required
+    "path": "{path}"
 }
 ```
+
+Values:
+- **path**: Path where to deleted the subvolumes.
