@@ -1,6 +1,7 @@
 # Documentation
 
-- [All in the docs directory](./docs/SUMMARY.md)
+- GitBook: https://gig.gitbooks.io/g8os
+- Documentation source in [./docs](./docs)
 
 # Repositories
 
