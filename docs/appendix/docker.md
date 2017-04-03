@@ -12,7 +12,7 @@ Steps:
 <a id="start-container"></a>
 ## Starting a container with Core0
 ```
-docker run --privileged -d --name core -p 6379:6379 g8os/g8os:1.0
+docker run --privileged -d --name core -p 6379:6379 g8os/g8os-dev:1.0
 ```
 
 To follow the container logs do
