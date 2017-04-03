@@ -6,32 +6,13 @@ Available commands:
 - [corex.list](#list)
 - [corex.terminate](#terminate)
 - [corex.client](#client)
+- [corex.dispatch](#dispatch)
 
 
 <a id="create"></a>
 ## corex.create
 
 Creates a new container with the given root plist, mount points and ZeroTier ID, and connects it to the given bridges.
-
-
-Arguments:
-
-```javascript
-{
-    "plist": "http://url/to/plist",
-    "mount": {
-        "/host/directory": "/container/directory"
-    },
-    "network": {
-        "zerotier": "zerotier network id", //options
-        "bridge": [], //list of bridges names to connect to
-    }
-    //TODO:
-    "port": {
-        host_port: container_port,
-    }
-}
-```
 
 Arguments:
 
@@ -70,21 +51,36 @@ Values:
 - **hostname**: Specific hostname you want to give to the container, if None it will automatically be set to core-x, x being the ID of the container
 
 
+<a id="list"></a>
+## corex.list
 
-### corex.list
-Takes no arguments.
-List all available `live` Cores on a host.
+Lists all available containers on a host. It takes no arguments.
 
-### corex.terminate
-Arguemnts:
+
+<a id="client"></a>
+### corex.client
+
+Returns all container info.
+
+
+<a id="terminate"></a>
+## corex.terminate
+
+Destroys the container and stops the core processes. It takes a mandatory container ID.
+
+Arguments:
+
 ```javascript
 {
     "container": container_id,
 }
 ```
-Destroys a Core and stops the Core processes. It takes a mandatory core ID.
 
-### corex.dispatch
+<a id="dispatch"></a>
+## corex.dispatch
+
+Dispatches any given command to the Core0 of the container.
+
 Arguments:
 ```javascript
 {
@@ -94,14 +90,3 @@ Arguments:
      }
 }
 ```
-
-
-
-<a id="list"></a>
-### container.list
-
-<a id="terminate"></a>
-### container.terminate
-
-<a id="client"></a>
-### container.client
