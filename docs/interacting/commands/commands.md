@@ -12,13 +12,13 @@ When started it first configures the networking, and then starts a local Redis i
 {
 	"id": "command-id",
 	"command": "command-name",
-	"arguments": {}, //command arguments depends on the command itself
+	"arguments": {},
 	"queue": "optional-queue",
-	"stats_interval": 0, //optional stats gathering interval (falls to default if not set)
-	"max_time": 0, //Max run time of the command, if exceeded command will be killed
-	"max_restart": 0, //Max number of retries to start the command if failed before giving up
-	"recurring_period": 0, //If provided command is considered recurring
-	"log_levels": [int] //Log levels to store locally and not discard.
+	"stats_interval": 0,
+	"max_time": 0,
+	"max_restart": 0,
+	"recurring_period": 0,
+	"log_levels": [int]
 }
 ```
 
@@ -31,3 +31,4 @@ The `Core0` Core understands a very specific set of management commands:
 - [Bridge commands](bridge.md)
 - [Disk commands](disk.md)
 - [Btrfs commands](btrfs.md)
+- [ZeroTier commands](zerotier.md)

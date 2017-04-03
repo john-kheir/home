@@ -14,7 +14,7 @@
   * [Booting G8OS on VirtualBox](booting/virtualbox.md)
   * [Booting G8OS on Packet.net](booting/ays.md)
 * [Interacting with G8OS](interacting/interacting.md)
-  * [Available Commands](interacting/commands.md)  
+  * [Available Commands](interacting/commands/commands.md)  
     - [Core](interacting/commands/core.md)  
     - [Info](interacting/commands/info.md)
     - [CoreX](interacting/commands/corex.md)
