@@ -3,10 +3,14 @@
 Available Commands:
 
 - [btrfs.create](#create)
+- [btrfs.device_add](#device_add)
+- [btrfs.remove](#device_remove)
 - [btrfs.list](#list)
+- [btrfs.info](#info)
 - [btrfs.subvol_create](#subvol_create)
 - [btrfs.subvol_list](#subvol_list)
 - [btrfs.subvol_delete](#subvol_delete)
+- [btrfs.subvol_snapshot](#subvol_snapshot)
 
 
 <a id="create"></a>
@@ -31,10 +35,52 @@ Values:
 - **metadata-profile**: Same as data-profile
 
 
+<a id="device_add"></a>
+## btrfs.device_add
+
+Add one or more devices to Btrfs filesystem mounted under `mountpoint`.
+
+Arguments:
+```javascript
+{
+  'mountpoint': {mount-point},
+  'devices': {devices},
+}
+```
+
+Values:
+- **mount-point**: Mount point of the Btrfs system
+- **devices**: One ore more devices to add
+
+
+<a id="device_remove"></a>
+## btrfs.device_remove
+
+Removes one or more devices from Btrfs filesystem mounted under `mountpoint`.
+
+Arguments:
+```javascript
+{
+  'mountpoint': {mount-point},
+  'devices': {devices},
+}
+```
+
+Values:
+- **mount-point**: Mount point of the Btrfs system
+- **devices**: One ore more devices to remove
+
+
 <a id="list"></a>
 ## btrfs.list
 
 List all Btrfs filesystems. It takes no arguments. Return array of all filesystems.
+
+
+<a id="info"></a>
+## btrfs.info
+
+Get Btrfs info. It takes no arguments.
 
 
 <a id="subvol_create"></a>
@@ -82,3 +128,24 @@ arguments:
 
 Values:
 - **path**: Path where to deleted the subvolumes.
+
+
+<a id="subvol_snapshot"></a>
+## btrfs.subvol_snapshot
+
+Takes a snapshot.
+
+
+arguments:
+```javascript
+{
+  "source": {source},
+  "destination": {destination},
+  "read_only": {read_only},
+}
+```
+
+Values:
+- **source** Source path of subvol
+- **destination**: Destination path of the snapshot
+- **readonly**: Set read-only on the snapshot
