@@ -2,13 +2,13 @@
 
 Available Commands:
 
-- [kvm.create](#create)
-- [kvm.destroy](#destroy)
-- [kvm.list](#list)
+- [experimental.kvm.create](#create)
+- [experimental.kvm.destroy](#destroy)
+- [experimental.kvm.list](#list)
 
 
 <a id="create"></a>
-## kvm.create
+## experimental.kvm.create
 
 Arguments:
 ```javascript
@@ -32,12 +32,12 @@ Values:
 
 
 <a id="destroy"></a>
-## kvm.destroy
+## experimental.kvm.destroy
 
 Destroys a given virtual machine.
 
 
 <a id="list"></a>
-## kvm.list
+## experimental.kvm.list
 
 Lists all virtual machines.

@@ -11,29 +11,29 @@ Available Commands:
 
 <a id="cpu"></a>
 ## info.cpu
-Takes no arguments.
-Returns information about the host CPU types, speed and capabilities
+
+Returns information about the host CPU types, speed and capabilities. Takes no arguments.
 
 
 <a id="disk"></a>
 ## info.disk
-Takes no arguments.
-Returns information about the host attached disks
+
+Returns information about the host attached disks. Takes no arguments.
 
 
 <a id="mem"></a>
 ## info.mem
-Takes no arguments.
-Returns information about the host memory.
+
+Returns information about the host memory. Takes no arguments.
 
 
 <a id="nic"></a>
 ## info.nic
-Takes no arguments.
-Returns information about the host attached NICs, and IPs
+
+Returns information about the host attached NICs, and IPs. Takes no arguments.
 
 
 <a id="os"></a>
 ## info.os
-Takes no arguments.
-Returns information about the host OS.
+
+Returns information about the host OS. Takes no arguments.

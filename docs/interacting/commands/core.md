@@ -12,50 +12,59 @@ Available Commands:
 
 <a id="ping"></a>
 ## core.ping
-Doesn't take any arguments. Returns a "pong". Main use case is to check wether the core is responding.
+
+Returns a "pong". Doesn't take any arguments. Main use case is to check wether the core is responding.
 
 
 <a id="system"></a>
 ## core.system
-Arguments:
-```javascript
-{
-	"name": "executable",
-	"dir": "pwd",
-	"args": ["command", "arguments"]
-	"env": {"ENV1": "VALUE1", "ENV2": "VALUE2"},
-	"stdin": "data to pass to executable over stdin"
-}
-```
 
 Executes a given command.
 
-
-<a id="kill"></a>
-## core.kill
 Arguments:
 ```javascript
 {
-    "id": "process-id-to-kill"
+	"name": "{command-label}",
+	"dir": "{directory}",
+	"args": "{command}",
+	"env": "{environment-variables}",
+	"stdin": "{stdin-data}"
 }
 ```
-Kills a certain process giving the process ID. The process/command ID is the ID of the command used to start this process
-in the first place.
+
+Values:
+- **command-label**: Label for the command to execute, the actual command is in  **args**
+- **directory**: Directory where to execute the command
+- **command**: Command + arguments in following format: `["command", "arguments"]`
+- **env**: Comma separated environment values, in following format: `"ENV1": "VALUE1", "ENV2": "VALUE2"`
+- **stdin-data**: Data to pass to executable over stdin
+
+<a id="kill"></a>
+## core.kill
+
+Kills the process with given process/command ID. The process/command ID is the ID of the command used to start this process in the first place.
+
+Arguments:
+```javascript
+{
+    "id": "{process-id-to-kill}"
+}
+```
 
 
 <a id="killall"></a>
 ## core.killall
-Takes no arguments
-Kills ALL processes on the system. (only the ones that where started by core0 itself) and still running by the time of calling this command
+
+Kills all processes on the system, i.e. only the ones that where started by core0 itself and still running by the time of calling this command. Takes no arguments.
 
 
 <a id="state"></a>
 ## core.state
-Takes no arguments.
-Returns aggregated state of all processes plus the consumption of core0 itself (cpu, memory, etc...)
+
+Returns aggregated state of all processes plus the consumption of Core0 itself (cpu, memory, etc...). Takes no arguments.
 
 
 <a id="reboot"></a>
 ## core.reboot
-Takes no arguments.
-Immediately reboot the machine.
+
+Immediately reboot the machine. Takes no arguments.
