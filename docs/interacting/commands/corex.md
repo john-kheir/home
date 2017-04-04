@@ -20,27 +20,33 @@ Arguments:
 {
   'root': {root_url},
   'mount': {mount},
+  'host_network': {host_network},
   'network': {
       'zerotier': {zerotier},
       'bridge': {bridge},
   },
   'port': {port},
   'hostname': {hostname},
+  'storage': {storage}
 }
 ```
 
 Values:
 
-- **root_url**: the root filesystem plist
+- **root_url**: URL of the flist for the root filesystem, e.g. `https://hub.gig.tech/gig-official-apps/ubuntu1604.flist`
 
-- **mount**: a dict with `{host_source: container_target}` mount points, where `host_source` directory must exists, `host_source` can be a URL to a plist to mount
+- **mount**: Dict with `{host_source: container_target}` mount points, where `host_source` directory must exist, `host_source` can be a URL to a flist
+
+- **host_network**: True or false, specifying if the container should share the same network stack as the host, if True, all below ZeroTier, bridge and ports arguments are ignored, not giving errors if provided
 
 - **zerotier**: An optional ZeroTier network ID to join
 
-- **bridge**: list of tuples as `('bridge_name': 'network_setup')` where `network_setup` can be one of the following:
+- **bridge**: List of tuples as `('bridge_name': 'network_setup')` where `network_setup` can be one of the following:
   - `''` or `'none'`: no IP is gonna be set on the link
   - `'dhcp'`: Run `udhcpc` on the container link, of course this will only work if the `bridge` is created with `dnsmasq` networking
   - `'CIDR'`: Assign static IP to the link
+- **hostname**: Specific hostname you want to give to the container, if None it will automatically be set to core-x, x being the ID of the container
+- **storage**: URL to the ARDB storage cluster, e.g. `ardb://hub.gig.tech:16379`, if not provided the default one from Core0 configuration will be used
 
   Example: `bridge=[('br0', '127.0.0.100/24'), ('br1', 'dhcp')]`
 

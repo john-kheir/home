@@ -99,7 +99,7 @@ Mount partition on target.
 Arguments:
 ```javascript
 {
-    "options": "{optios}",
+    "options": "{options}",
     "source": "{source}",
     "target": "{target}",
 }
