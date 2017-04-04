@@ -35,26 +35,31 @@ Values:
 
 - **root_url**: URL of the flist for the root filesystem, e.g. `https://hub.gig.tech/gig-official-apps/ubuntu1604.flist`
 
-- **mount**: Dict with `{host_source: container_target}` mount points, where `host_source` directory must exist, `host_source` can be a URL to a flist
+- **mount**: Dict of `('{host_source}': '{container_target}')` pairs, each mounting a directory on the host or a flist (specified by its URL) to the container
 
-- **host_network**: True or false, specifying if the container should share the same network stack as the host, if True, all below ZeroTier, bridge and ports arguments are ignored, not giving errors if provided
+- **host_network**: True or false, specifying whether the container should share the same network stack as the host
+  - If True, all below ZeroTier, bridge and port arguments are ignored
 
-- **zerotier**: An optional ZeroTier network ID to join
+- **zerotier**: Optional ZeroTier network ID to join
 
-- **bridge**: List of tuples as `('bridge_name': 'network_setup')` where `network_setup` can be one of the following:
-  - `''` or `'none'`: no IP is gonna be set on the link
-  - `'dhcp'`: Run `udhcpc` on the container link, of course this will only work if the `bridge` is created with `dnsmasq` networking
-  - `'CIDR'`: Assign static IP to the link
-- **hostname**: Specific hostname you want to give to the container, if None it will automatically be set to core-x, x being the ID of the container
-- **storage**: URL to the ARDB storage cluster, e.g. `ardb://hub.gig.tech:16379`, if not provided the default one from Core0 configuration will be used
+- **bridge**: Dict of `('{bridge_name}': '{network_setup}')` pairs where `{network_setup}` can be one of the following:
+  - `none` or an empty string: No IP address is set on the link
+  - `dhcp`: Runs `Udhcpc` on the container link, of course this will only work if the `bridge` is created with `dnsmasq` networking
+  - `CIDR`: Assigns a static IP address to the link
 
   Example: `bridge=[('br0', '127.0.0.100/24'), ('br1', 'dhcp')]`
 
-- **port**: A dict of `host_port: container_port` pairs
-
-  Example: `port={8080: 80, 7000:7000}`
-
 - **hostname**: Specific hostname you want to give to the container, if None it will automatically be set to core-x, x being the ID of the container
+
+- **storage**: URL to the ARDB storage cluster, e.g. `ardb://hub.gig.tech:16379`
+  - If not provided the default one from the Core0 configuration will be used
+
+- **port**: Dict of `{host_port}: {container_port}` pairs
+
+  Example: `port=[8080: 80, 7000:7000]`
+
+- **hostname**: Specific hostname you want to give to the container
+  - If none it will automatically be set to core-x, x being the ID of the container
 
 
 <a id="list"></a>
