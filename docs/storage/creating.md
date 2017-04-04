@@ -54,7 +54,7 @@ Mount root data disk to `/data`:
 
 ```python
 cl.disk.mount("/dev/sdb1", "/data")
-````
+```
 
 <a id="create-volume"></a>
 Create a subvolume:
