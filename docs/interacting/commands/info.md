@@ -30,7 +30,7 @@ Returns information about the host memory. Takes no arguments.
 <a id="nic"></a>
 ## info.nic
 
-Returns information about the host attached NICs, and IPs. Takes no arguments.
+Returns information about the host attached NICs, and IP addresses. Takes no arguments.
 
 
 <a id="os"></a>

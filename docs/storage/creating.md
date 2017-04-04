@@ -1,9 +1,8 @@
 # Creating Disks
 
-See the related documents documentation:
-
-- [Disk Management](../interacting/commands.md#disk-management)
-- [Btrfs Management](../interacting/commands.md#btrfs-management)
+See the related commands documentation:
+- [Disk Commands](../interacting/commands/disk.md)
+- [Btrfs Commands](../interacting/commands/btrfs.md)
 
 In below example goes through all steps to create a disk:
 - [Create a partition table](#partition-table)
