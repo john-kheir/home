@@ -22,17 +22,19 @@ Arguments:
 ```javascript
 {
     "label": "{label}",
-    "devices": ["/dev/sdc1", "/dev/sdc2"],
+    "devices": {devices},
     "data": "{data-profile}",
-    "metadata": "{metadata-profile}"
+    "metadata": "{metadata-profile}",
+    "overwrite": "{overwrite}",
 }
 ```
 
 Values:
 - **label**: Name/label
 - **devices**: Array of devices, e.g. `["/dev/sdc1", "/dev/sdc2"]`
-- **data-profile**: `raid0`, `raid1`, `raid5`, `raid6`, `raid10`, `dup` or `single`
-- **metadata-profile**: Same as data-profile
+- **metadata-profile**: `raid0`, `raid1`, `raid5`, `raid6`, `raid10`, `dup` or `single`
+- **data-profile**: Same as metadata-profile
+- **overwrite**: If true forces creation of the filesystem, overwriting any existing filesystem
 
 
 <a id="device_add"></a>
