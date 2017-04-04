@@ -16,7 +16,7 @@ Available Commands:
 <a id="create"></a>
 ## btrfs.create
 
-Create a Btrfs filesystem with the given label, devices, and profiles.
+Creates a Btrfs filesystem with the given label, devices, and profiles.
 
 Arguments:
 ```javascript
@@ -38,7 +38,7 @@ Values:
 <a id="device_add"></a>
 ## btrfs.device_add
 
-Add one or more devices to Btrfs filesystem mounted under `mountpoint`.
+Adds one or more devices to the Btrfs filesystem mounted under a given `mountpoint`.
 
 Arguments:
 ```javascript
@@ -56,7 +56,7 @@ Values:
 <a id="device_remove"></a>
 ## btrfs.device_remove
 
-Removes one or more devices from Btrfs filesystem mounted under `mountpoint`.
+Removes one or more devices from the Btrfs filesystem mounted under `mountpoint`.
 
 Arguments:
 ```javascript
@@ -74,13 +74,13 @@ Values:
 <a id="list"></a>
 ## btrfs.list
 
-List all Btrfs filesystems. It takes no arguments. Return array of all filesystems.
+Lists all Btrfs filesystems. It takes no arguments. Return array of all filesystems.
 
 
 <a id="info"></a>
 ## btrfs.info
 
-Get Btrfs info. It takes no arguments.
+Gets Btrfs info. It takes no arguments.
 
 
 <a id="subvol_create"></a>
@@ -101,7 +101,7 @@ Values:
 <a id="subvol_list"></a>
 ## btrfs.subvol_list
 
-Lists all subvolume under a path.
+Lists all subvolumes under a given path.
 
 arguments:
 ```javascript
@@ -111,7 +111,7 @@ arguments:
 ```
 
 Values:
-- **path**: Path to list.
+- **path**: Path to list
 
 
 <a id="subvol_delete"></a>
@@ -127,14 +127,13 @@ arguments:
 ```
 
 Values:
-- **path**: Path where to deleted the subvolumes.
+- **path**: Path where to deleted the subvolumes
 
 
 <a id="subvol_snapshot"></a>
 ## btrfs.subvol_snapshot
 
 Takes a snapshot.
-
 
 arguments:
 ```javascript
