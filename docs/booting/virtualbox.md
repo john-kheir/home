@@ -59,6 +59,6 @@ Using the Python client:
 
 ```python
 import g8core
-cl = g8core.Client(self, host, port=6379, password='')
-cl.ping() # this should return 'pong'
+cl = g8core.Client('{host-ip-address}', port=6379, password='')
+cl.ping()
 ```
