@@ -1,6 +1,6 @@
 # Bridge Commands
 
-Available Commands:
+Available commands:
 
 - [bridge.create](#create)
 - [bridge.list](#list)

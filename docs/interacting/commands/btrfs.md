@@ -1,6 +1,6 @@
 # Btrfs Commands
 
-Available Commands:
+Available commands:
 
 - [btrfs.create](#create)
 - [btrfs.device_add](#device_add)
@@ -29,7 +29,7 @@ Arguments:
 ```
 
 Values:
-- **label**: Name/label.
+- **label**: Name/label
 - **devices**: Array of devices, e.g. `["/dev/sdc1", "/dev/sdc2"]`
 - **data-profile**: `raid0`, `raid1`, `raid5`, `raid6`, `raid10`, `dup` or `single`
 - **metadata-profile**: Same as data-profile
@@ -145,6 +145,6 @@ arguments:
 ```
 
 Values:
-- **source** Source path of subvol
+- **source** Source path of subvolume
 - **destination**: Destination path of the snapshot
 - **readonly**: Set read-only on the snapshot

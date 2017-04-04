@@ -1,6 +1,6 @@
 # ZeroTier Commands
 
-Available Commands:
+Available commands:
 
 - [zerotier.join](#join)
 - [zerotier.leave](#leave)

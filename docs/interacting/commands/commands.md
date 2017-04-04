@@ -4,7 +4,7 @@
 
 Core0 is the first process to start on bare metal. It works as a simple process manager.
 
-When started it first configures the networking, and then starts a local Redis instance to dispatch commands to CoreX cores.
+When started it first configures the networking, and then starts a local Redis instance to dispatch commands to the CoreX cores.
 
 ## Command structure
 
@@ -22,7 +22,7 @@ When started it first configures the networking, and then starts a local Redis i
 }
 ```
 
-The `Core0` Core understands a very specific set of management commands:
+The `Core0` core understands a very specific set of commands:
 
 
 - [Core commands](core.md)

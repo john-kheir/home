@@ -1,6 +1,6 @@
 # Core Commands
 
-Available Commands:
+Available commands:
 
 - [core.ping](#ping)
 - [core.system](#system)

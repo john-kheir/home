@@ -1,6 +1,6 @@
 # Disk Commands
 
-Available Commands:
+Available commands:
 
 - [disk.list](#list)
 - [disk.mktable](#mktable)

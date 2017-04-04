@@ -1,6 +1,6 @@
 # KVM Commands
 
-Available Commands:
+Available commands:
 
 - [experimental.kvm.create](#create)
 - [experimental.kvm.destroy](#destroy)

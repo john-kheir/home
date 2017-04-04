@@ -1,6 +1,6 @@
 # Info Commands
 
-Available Commands:
+Available commands:
 
 - [info.cpu](#cpu)
 - [info.disk](#disk)
