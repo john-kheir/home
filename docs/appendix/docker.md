@@ -6,46 +6,25 @@ The below steps will guide you through the process to running Core0 on a Docker 
 
 Steps:
 
-- [Starting a container with core0](#start-container)
-- [Access G8OS from JumpScale](#jumpscale-client)
+- [Starting a Docker container with Core0](#start-container)
+- [Access Core0 from Python](#python-client)
 
 <a id="start-container"></a>
-## Starting a container with Core0
+## Starting a Docker container with Core0
+
 ```
 docker run --privileged -d --name core -p 6379:6379 g8os/g8os-dev:1.0
 ```
 
-To follow the container logs do
+To follow the container logs do:
+
 ```bash
 docker logs -f core
 ```
 
-<a id="jumpscale-client"></a>
-## Access G8OS from JumpScale
+<a id="python-client"></a>
+## Access G8OS from Python
 
-Before using the JumpScale client for G8OS make sure the `./pyclient` is in your `PYTHONPATH`.
+Use `docker inspect core` to find out on which IP address Core0 can be reached.
 
-This is how to use the JumpScale client for G8OS:
-
-```python
-import client
-
-cl = client.Client(host='{ip of Docker container running Core0}')
-
-#validate that core0 is reachable
-print(cl.ping())
-
-#then u can do stuff like
-print(
-    cl.system('ps -eF').get()
-)
-
-print(
-    cl.system('ip a').get()
-)
-
-#client exposes more tools for disk, bridges, and container mgmt
-print(
-    cl.disk.list()
-)
-```
+See [Python Client](../interacting/python.md).
