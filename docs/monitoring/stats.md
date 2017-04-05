@@ -1,6 +1,6 @@
 ## Statistics
 
-Statistics are reported as log messages with `log level` 10, as discussed in [log levels](logging.md!#log-levels).
+Statistics are reported as log messages with `log level` 10, as discussed in [log levels](logging.md#log-levels).
 
 The statistics message format is as follows:
 
