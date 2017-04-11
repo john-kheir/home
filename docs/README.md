@@ -2,4 +2,4 @@
 
 G8OS is a grid based operating system.
 
-See the [Table of content](SUMMARY.md)
+See the [Table of content](/docs/SUMMARY.md)

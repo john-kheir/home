@@ -44,7 +44,7 @@ Values:
 
 - **bridge**: Dict of `('{bridge_name}': '{network_setup}')` pairs where `{network_setup}` can be one of the following:
   - `none` or an empty string: No IP address is set on the link
-  - `dhcp`: Runs `Udhcpc` on the container link, of course this will only work if the `bridge` is created with `dnsmasq` networking
+  - `dhcp`: Runs the `Udhcpc` DHCP client on the container link, of course this will only work if the bridge is created with `dnsmasq` networking
   - `CIDR`: Assigns a static IP address to the link
 
   Example: `bridge=[('br0', '127.0.0.100/24'), ('br1', 'dhcp')]`
