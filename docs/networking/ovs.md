@@ -15,7 +15,7 @@ nic = {
 The `id` is ignored in case of type `default`, and equal to the `vlan` tag in case of vlan type,
 `vxlan id` in case of vxlan type, and `zerotier` network id in case of the zerotier type.
  
-The `config` object can has all or any of the following fileds
+The `config` object can has all or any of the following fields
 ```python
 config = {
 	"cidr": "ip/mask-bit",
@@ -55,13 +55,13 @@ networking infra structure. A minimal bootstrap should at least contain the foll
 
 ```python
 ovscl = cl.container.client(ovs)
-ovs.json('ovs.bridge-add', {"bridge": "backplane"})
-ovs.json('ovs.vlan-ensure', {'master': 'backplane', 'vlan': 2313, 'name':'vxbackend'})
+ovscl.json('ovs.bridge-add', {"bridge": "backplane"})
+ovscl.json('ovs.vlan-ensure', {'master': 'backplane', 'vlan': 2313, 'name':'vxbackend'})
 # the vlan tag can be any reserved value for vxbackend
 ```
 
 > The above calls will make sure we have `backplane` vswitch, and `vxbackend` vswitch but it 
-doesn't connect the backplane to the intenet, make sure to read [ovs-plugin](https://github.com/g8os/ovs-plugin)
+doesn't connect the backplane to the internet, make sure to read [ovs-plugin](https://github.com/g8os/ovs-plugin)
 for more info on how to create bonds or add links to the backplane 
 
 Once your infra structure for ovs is bootstrapped you can simple use the vlan and vxlan types
