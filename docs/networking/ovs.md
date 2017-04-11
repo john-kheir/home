@@ -61,7 +61,7 @@ ovs.json('ovs.vlan-ensure', {'master': 'backplane', 'vlan': 2313, 'name':'vxback
 ```
 
 > The above calls will make sure we have `backplane` vswitch, and `vxbackend` vswitch but it 
-doesn't connect the backplane to the intenet, make sure to read [ovs-plutin](https://github.com/g8os/ovs-plugin)
+doesn't connect the backplane to the intenet, make sure to read [ovs-plugin](https://github.com/g8os/ovs-plugin)
 for more info on how to create bonds or add links to the backplane 
 
 Once your infra structure for ovs is bootstrapped you can simple use the vlan and vxlan types
