@@ -1,4 +1,4 @@
 # Networking
 
-* [VXLAN](vxlan.md)
+* [OVS](ovs.md)
 * [ZeroTier](zerotier.md)
